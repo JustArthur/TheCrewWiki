@@ -1,5 +1,7 @@
+<?php include_once 'include.php' ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,25 +13,7 @@
 </head>
 <body>
     <div class="container">
-        <header id="nav" class="sidebar">
-            <div class="logo">
-                <a>Wiki<span class="yellow">Crew</span></a>
-            </div>
-    
-            <div class="border"></div>
-    
-            <ul class="list">
-                <a href="#" class="list-item">Introduction</a>
-    
-                <ul class="secondary-list">
-                    <li class="list-item title">The Crew 2</li>
-    
-                    <a href="#" class="list-item">Liste des véhicules</a>
-                    <a href="#" class="list-item">Liste des activités</a>
-                    <a href="#" class="list-item">Entreprise Motorflix</a>
-                </ul>
-            </ul>
-        </header>
+        <?php include_once 'views/sidebar.php' ?>
 
         <main>
             <div class="content">
@@ -72,7 +56,5 @@
             </div>
         </main>
     </div>
-
-    <script src="javascript/navbar.js"></script>
 </body>
 </html>

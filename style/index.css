@@ -12,6 +12,8 @@
 
     font-family: 'Outfit', sans-serif;
     font-style: normal;
+
+    user-select: none;
 }
 
 body {
