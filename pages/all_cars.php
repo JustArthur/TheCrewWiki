@@ -53,7 +53,7 @@ $resBrands = $resBrands->fetchAll();
                                 <i class="uil uil-search"></i>
                                 <input type="text" placeholder="Rechercher un pays">
                             </div>
-                            <ul class="options"></ul>
+                            <ul id="paysSelect" class="options"></ul>
                         </div>
                     </div>
                 </form>

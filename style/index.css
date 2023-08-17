@@ -152,7 +152,6 @@ main .content {
 
     gap: 18px;
 
-    overflow-y: scroll;
     overflow-x: hidden;
 }
 
@@ -230,7 +229,9 @@ main .content .list .list-item.box:hover {
 }
 
 main .content .list .list-item.box:hover .textes .title,
-main .content .list .list-item.box:hover .icon {
+main .content .list .list-item.box:hover .icon,
+main .content .list .list-item.box:focus .textes .title,
+main .content .list .list-item.box:focus .icon {
     color: #FFDC16;
 }
 
@@ -307,6 +308,8 @@ main .content .list .list-item .icon {
         top: 80px;
 
         max-width: 100%;
+
+        padding: 45px 0.5rem;
     }
 
     main .content {

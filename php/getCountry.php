@@ -12,7 +12,5 @@
         $tabCountry[] = $country['nameCountry'];
     }
 
-    $tabCountryJSON = json_encode($tabCountry);
-
-    header('Content-Type: application/json');
+    echo json_encode($tabCountry);
 ?>
