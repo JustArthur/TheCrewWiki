@@ -17,6 +17,7 @@ $resBrands = $resBrands->fetchAll();
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <link rel="stylesheet" href="../style/index.css">
     <link rel="stylesheet" href="../style/all_cars.css">
@@ -50,7 +51,7 @@ $resBrands = $resBrands->fetchAll();
                         <div class="content">
                             <div class="search">
                                 <i class="uil uil-search"></i>
-                                <input spellcheck="false" type="text" placeholder="Rechercher un pays">
+                                <input type="text" placeholder="Rechercher un pays">
                             </div>
                             <ul class="options"></ul>
                         </div>

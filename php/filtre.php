@@ -1,0 +1,61 @@
+<?php
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
+
+    include_once('../include.php');
+
+    //Récupère l'id du menu Dropdown
+    $id_cat = $_POST['request'];
+
+    //Recherche tout les produits dans la BDD
+    $resBrands = $DB->prepare('SELECT * FROM brands ORDER BY nomBrand ASC');
+    $resBrands->execute();
+    $resBrands = $resBrands->fetchAll();
+
+    $resCountry = $DB->prepare("SELECT brands.* FROM brands INNER JOIN country ON brands.idCountry = country.idCountry WHERE country.nameCountry = ?");
+    $resCountry->execute([$id_cat]);
+
+    //S'il récupère 0 alors il le fait sans filtre
+    if ($_POST['request']==0) {
+        foreach ($resBrands as $brand) { ?>
+            <a href="#" class="card">
+                <div class="card-content">
+                    <div class="card-image">
+                        <img src="../img/brands/<?= $brand['nomBrand'] ?>/logo/<?= $brand['imgBrand'] ?>">
+                    </div>
+                    <div class="card-info-wrapper">
+                        <div class="card-info">
+                            <img src="../img/flags/<?= $brand['flagBrand'] ?>" class="flag">
+                            <div class="card-info-title">
+                                <h3><?= $brand['nomBrand'] ?></h3>
+                                <h4>Créer en <?php if ($brand['anneeBrand'] != 0) { echo $brand['anneeBrand']; } else { echo '?'; } ?></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        <?php }
+        }
+
+    //Sinon il chercher par rapport à l'id de la categorie
+    else {
+        foreach ($resCountry as $country) { ?>
+            <a href="#" class="card">
+                <div class="card-content">
+                    <div class="card-image">
+                        <img src="../img/brands/<?= $country['nomBrand'] ?>/logo/<?= $country['imgBrand'] ?>">
+                    </div>
+                    <div class="card-info-wrapper">
+                        <div class="card-info">
+                            <img src="../img/flags/<?= $country['flagBrand'] ?>" class="flag">
+                            <div class="card-info-title">
+                                <h3><?= $country['nomBrand'] ?></h3>
+                                <h4>Créer en <?php if ($country['anneeBrand'] != 0) { echo $country['anneeBrand']; } else { echo '?'; } ?></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        <?php }
+    }
+?>
