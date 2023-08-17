@@ -28,7 +28,10 @@ CREATE TABLE `brands` (
   `imgBrand` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `anneeBrand` bigint NOT NULL,
   `flagBrand` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  PRIMARY KEY (`idBrand`)
+  `idCountry` bigint DEFAULT NULL,
+  PRIMARY KEY (`idBrand`),
+  KEY `brands_FK` (`idCountry`),
+  CONSTRAINT `brands_FK` FOREIGN KEY (`idCountry`) REFERENCES `country` (`idCountry`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,8 +41,32 @@ CREATE TABLE `brands` (
 
 LOCK TABLES `brands` WRITE;
 /*!40000 ALTER TABLE `brands` DISABLE KEYS */;
-INSERT INTO `brands` VALUES (1,'Abarth','ManufacturerAbarth.webp',1949,'italia.png'),(2,'Acura','ManufacturerAcura.webp',1986,'japan.png'),(3,'Aeroboat','ManufacturerAeroboat.webp',0,'england.png'),(4,'Alfa Romeo','ManufacturerAlfa_Romeo.webp',1910,'italia.png'),(5,'Ariel','ManufacturerAriel.webp',1991,'england.png'),(6,'Aston Martin','ManufacturerAston_Martin.webp',1913,'england.png'),(7,'Audi','ManufacturerAudi.webp',1909,'german.png'),(8,'Beechcraft','ManufacturerBeechcraft.webp',1932,'america.png');
+INSERT INTO `brands` VALUES (1,'Abarth','ManufacturerAbarth.webp',1949,'italia.png',1),(2,'Acura','ManufacturerAcura.webp',1986,'japan.png',2),(3,'Aeroboat','ManufacturerAeroboat.webp',0,'england.png',3),(4,'Alfa Romeo','ManufacturerAlfa_Romeo.webp',1910,'italia.png',1),(5,'Ariel','ManufacturerAriel.webp',1991,'england.png',3),(6,'Aston Martin','ManufacturerAston_Martin.webp',1913,'england.png',3),(7,'Audi','ManufacturerAudi.webp',1909,'german.png',4),(8,'Beechcraft','ManufacturerBeechcraft.webp',1932,'america.png',5);
 /*!40000 ALTER TABLE `brands` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `country`
+--
+
+DROP TABLE IF EXISTS `country`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `country` (
+  `idCountry` bigint NOT NULL AUTO_INCREMENT,
+  `nameCountry` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`idCountry`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `country`
+--
+
+LOCK TABLES `country` WRITE;
+/*!40000 ALTER TABLE `country` DISABLE KEYS */;
+INSERT INTO `country` VALUES (1,'Italie'),(2,'Japon'),(3,'Royaume-Uni'),(4,'Allemagne'),(5,'États-Unis');
+/*!40000 ALTER TABLE `country` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -55,4 +82,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-17 16:55:53
+-- Dump completed on 2023-08-17 21:00:21
