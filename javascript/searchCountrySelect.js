@@ -6,7 +6,6 @@ const wrapper = document.querySelector(".wrapper"),
 
 // let countries = [];
 
-
 // var xhr = new XMLHttpRequest();
 
 // xhr.onreadystatechange = function() {
