@@ -114,9 +114,10 @@ CREATE TABLE `user` (
   `idUser` bigint NOT NULL AUTO_INCREMENT,
   `identifiantUser` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `passwordUser` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `rangUser` enum('0','1','2') COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `rangUser` bigint NOT NULL,
+  `emailUser` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`idUser`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,7 +126,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Kuma','$2y$10$7/JyQAo3TRV0gsP40C9fdO7KDUQysyxATZfvaAOoN3m8l1pd.6ERy','2'),(2,'Wayz','$2y$10$TxrcngefLdDwOnncG/Cvgeb2uMyfSNiNmOdCgqFhSEVdAza4LAyNq','2');
+INSERT INTO `user` VALUES (1,'Kuma','$2y$10$7/JyQAo3TRV0gsP40C9fdO7KDUQysyxATZfvaAOoN3m8l1pd.6ERy',3,''),(2,'Wayz','$2y$10$TxrcngefLdDwOnncG/Cvgeb2uMyfSNiNmOdCgqFhSEVdAza4LAyNq',3,''),(3,'','$2y$10$n/shuRZspFYd.pkkEVb6cOeix3GK1AoD/YjeCOoBPWjoKUb7cdeRO',0,'maxxozou@gmail.com'),(6,'userTest','$2y$10$jpkyOxDtTbvKBQG5Dm3Sm.ePjyLDKpwWhe9XBrO/keGl/X4ff8x9u',0,'test@gmail.com'),(7,'userTest2','$2y$10$49eVXnPZIkjWpkYu41JF.OtIUv6t//VEP.7c1k8JbNQ7AfaPJxqS2',0,'arthur@gmail.com');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -142,4 +143,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-18 16:25:40
+-- Dump completed on 2023-08-18 21:29:58
