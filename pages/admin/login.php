@@ -38,7 +38,7 @@
                     header('Location: ../../index');
                     exit();
                 } else {
-                    header('Location: panel');
+                    header('Location: pages/panel');
                     exit();
                 }
             }

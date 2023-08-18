@@ -18,7 +18,7 @@
     //S'il récupère 0 alors il le fait sans filtre
     if ($_POST['request']== 'Tout les pays') {
         foreach ($resBrands as $brand) { ?>
-            <a href="#" class="card">
+            <a href="brand?id_brand=<?= $brand['idBrand'] ?>" class="card">
                 <div class="card-content">
                     <div class="card-image">
                         <img src="../img/brands/<?= $brand['nomBrand'] ?>/logo/<?= $brand['imgBrand'] ?>">
@@ -40,7 +40,7 @@
     //Sinon il chercher par rapport à l'id de la categorie
     else {
         foreach ($resCountry as $country) { ?>
-            <a href="#" class="card">
+            <a href="brand?id_brand=<?= $country['idBrand'] ?>" class="card">
                 <div class="card-content">
                     <div class="card-image">
                         <img src="../img/brands/<?= $country['nomBrand'] ?>/logo/<?= $country['imgBrand'] ?>">

@@ -120,7 +120,7 @@ form {
 }
 
 
-form input:not(input[type='file']),
+form input:not(input[type='file'], input[type="radio"]),
 form select {
     height: 50px;
     width: 100%;
@@ -166,6 +166,20 @@ form input.submit_btn[type='submit'] {
     background: #FFDC16;
 
     color: #131315;
+}
+
+form .inputs {
+    width: max-content;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+form .inputs input {
+    background-color: #131315;
+    border: 1px solid #2B2E39;
 }
 
 form img{

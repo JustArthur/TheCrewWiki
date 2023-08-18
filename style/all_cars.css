@@ -31,6 +31,15 @@
     flex: 1 0 300px;
 }
 
+.card.summit { background-color: #FFDC16; }
+.card.battlePass { background-color: #4285f4;}
+.card.icon { background-color: #F61156; }
+
+.list-card.cars .card{
+    width: 475px;
+    flex: 1 0 475px;
+}
+
 .card:hover::before {
     opacity: 1;
 }
@@ -312,4 +321,20 @@ li.selected {
     
     border-radius: 5px;
     border: 1px solid #2B2E39;
+}
+
+@media screen and (max-width: 830px){
+    .list-card .card {
+        width: 260px;
+    
+        flex: 1 0 260px;
+    }
+}
+
+
+
+
+
+main .content img.carImg {
+    height: 400px;
 }

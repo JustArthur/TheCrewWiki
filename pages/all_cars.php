@@ -1,10 +1,10 @@
 <?php
 
-include_once '../include.php';
+    include_once '../include.php';
 
-$resBrands = $DB->prepare('SELECT * FROM brands INNER JOIN country ON country.idCountry = brands.idCountry ORDER BY brands.nomBrand ASC');
-$resBrands->execute();
-$resBrands = $resBrands->fetchAll();
+    $resBrands = $DB->prepare('SELECT * FROM brands INNER JOIN country ON country.idCountry = brands.idCountry ORDER BY brands.nomBrand ASC');
+    $resBrands->execute();
+    $resBrands = $resBrands->fetchAll();
 
 ?>
 
@@ -61,7 +61,7 @@ $resBrands = $resBrands->fetchAll();
 
                 <ul class="list-card" id="cards">
                     <?php foreach ($resBrands as $brand) { ?>
-                        <a href="#" class="card">
+                        <a href="brand?id_brand=<?= $brand['idBrand'] ?>" class="card">
                             <div class="card-content">
                                 <div class="card-image">
                                     <img src="../img/brands/<?= $brand['nomBrand'] ?>/logo/<?= $brand['imgBrand'] ?>">

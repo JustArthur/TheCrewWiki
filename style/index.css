@@ -151,8 +151,6 @@ main .content {
     flex-direction: column;
 
     gap: 18px;
-
-    overflow-x: hidden;
 }
 
 main .content .title {
@@ -263,7 +261,7 @@ main .content .list .list-item .icon {
 
 
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 830px) {
     header {
         justify-content: center;
 

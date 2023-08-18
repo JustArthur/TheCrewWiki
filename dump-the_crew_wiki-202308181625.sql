@@ -45,6 +45,40 @@ INSERT INTO `brands` VALUES (1,'Abarth','ManufacturerAbarth.webp',1949,1),(2,'Ac
 UNLOCK TABLES;
 
 --
+-- Table structure for table `cars`
+--
+
+DROP TABLE IF EXISTS `cars`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cars` (
+  `idCar` bigint NOT NULL AUTO_INCREMENT,
+  `nomCar` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `anneeCar` bigint NOT NULL,
+  `imgCar` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `summitReward` int NOT NULL DEFAULT '0',
+  `battlepassReward` int NOT NULL DEFAULT '0',
+  `iconReward` bigint DEFAULT '0',
+  `buckPrice` bigint DEFAULT '0',
+  `crewCreditPrice` bigint DEFAULT '0',
+  `idBrand` bigint DEFAULT NULL,
+  PRIMARY KEY (`idCar`),
+  KEY `cars_FK` (`idBrand`),
+  CONSTRAINT `cars_FK` FOREIGN KEY (`idBrand`) REFERENCES `brands` (`idBrand`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cars`
+--
+
+LOCK TABLES `cars` WRITE;
+/*!40000 ALTER TABLE `cars` DISABLE KEYS */;
+INSERT INTO `cars` VALUES (1,'Bugatti Chiron',2017,'TC2BugattiChiron.webp',0,0,0,2485000,355000,11),(2,'Bugatti Chiron Super Sport 300+',2019,'TC2BugattiChironSS300+.webp',0,0,0,1957199,279599,11),(3,'Bugatti Centodieci',2022,'TC2BugattiCentodieci.webp',0,0,0,1793679,256239,11),(4,'Bugatti Chiron Carbon Edition',2017,'TC2BugattiChironCarbon.webp',0,0,1000,0,0,11),(5,'Bugatti Divo',2020,'TC2BugattiDivo.webp',0,0,0,2599100,371300,11),(6,'Bugatti Chiron Interception Unit',2017,'TC2BugattiChironInterceptionUnit.webp',0,1,0,0,0,11),(7,'Bugatti Divo Emerald Storm',2020,'TC2BugattiDivoEmeraldStorm.webp',1,0,0,0,0,11),(8,'Bugatti Divo Magma Edititon',2020,'TC2BugattiDivoMagma.webp',1,0,0,0,0,11),(9,'Bugatti EB110',1991,'TC2BugattiEB110.webp',0,0,0,1342879,191839,11),(10,'Bugatti La Voiture Noire',2021,'TC2BugattiLVN.webp',0,0,0,2233839,319119,11),(11,'Type 57 SC Atlantic',1934,'TC2BugattiType57.webp',0,0,0,671439,95919,11),(12,'Bugatti Veyron 16.4 Grand Sport Vitesse',2005,'TC2BugattiVeyron164GrandSportVitesse.webp',0,0,0,2093000,299000,11),(13,'Bugatti Veyron 16.4 Grand Sport Vitesse Deep Blue Edition',2005,'TC2BugattiVeyron164GrandSportVitesseDeepBlue.webp',1,0,0,0,0,11),(14,'Bugatti Veyron 16.4 Grand Sport Vitesse Edition One',2005,'TC2BugattiVeyron164GrandSportVitesseEditionOne.webp',1,0,0,0,0,11),(15,'Koenigsegg Jesko',2019,'TC2KoenigseggJesko.webp',0,0,0,2675400,382200,38),(16,'Honda S2000 Red Panther Edition',1999,'TC2HondaS2000RedPantherEdition.webp',1,0,0,0,0,30);
+/*!40000 ALTER TABLE `cars` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `country`
 --
 
@@ -108,4 +142,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-18 12:12:33
+-- Dump completed on 2023-08-18 16:25:40
