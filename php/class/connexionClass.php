@@ -14,8 +14,8 @@
             $verif_password = getPassword($email);
             $verif_password = $verif_password->fetch();
 
-            if (isset($verif_password['password'])) {
-                if (!password_verify($password, $verif_password['password'])) {
+            if (isset($verif_password['passwordUser'])) {
+                if (!password_verify($password, $verif_password['passwordUser'])) {
                     $this->valid = false;
                     $this->erreur = 'L\'adresse-mail ou le mot de passe est incorect.';
                 }
