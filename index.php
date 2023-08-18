@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="container">
-        <?php include_once 'views/sidebar.php' ?>
+        <?php include_once './pages/views/sidebar.php' ?>
 
         <main>
             <div class="content">

@@ -6,7 +6,7 @@ const wrapper = document.querySelector(".wrapper"),
 let countries = [];
 
 $.ajax({
-    url: '../php/getCountry.php',
+    url: '../../php/getCountry.php',
     type: 'GET',
     success: function(data) {
         countries = JSON.parse(data);
@@ -39,7 +39,7 @@ function updateName(selectedLi) {
     selectBtn.firstElementChild.innerText = selectedLi.innerText;
 
     $.ajax({
-        url: '../php/filtre.php',
+        url: '../../php/filtre.php',
         type: 'POST',
         data: 'request=' + selectedLi["innerHTML"],
         success: function (data) {

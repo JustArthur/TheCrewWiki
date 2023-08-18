@@ -1,6 +1,6 @@
 <?php
 
-    include_once '../include.php';
+    include_once '../../include.php';
 
     $resBrands = $DB->prepare('SELECT * FROM brands INNER JOIN country ON country.idCountry = brands.idCountry ORDER BY brands.nomBrand ASC');
     $resBrands->execute();
@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="../style/index.css">
-    <link rel="stylesheet" href="../style/all_cars.css">
-    <link rel="stylesheet" href="../style/sidebar.css">
+    <link rel="stylesheet" href="../../style/index.css">
+    <link rel="stylesheet" href="../../style/all_cars.css">
+    <link rel="stylesheet" href="../../style/sidebar.css">
 
     <title>Document</title>
 </head>
@@ -65,11 +65,11 @@
                         <a href="brand?id_brand=<?= $brand['idBrand'] ?>" class="card">
                             <div class="card-content">
                                 <div class="card-image">
-                                    <img src="../img/brands/<?= $brand['nomBrand'] ?>/logo/<?= $brand['imgBrand'] ?>">
+                                    <img src="../../img/brands/<?= $brand['nomBrand'] ?>/logo/<?= $brand['imgBrand'] ?>">
                                 </div>
                                 <div class="card-info-wrapper">
                                     <div class="card-info">
-                                        <img src="../img/flags/<?= $brand['flagCountry'] ?>" class="flag">
+                                        <img src="../../img/flags/<?= $brand['flagCountry'] ?>" class="flag">
                                         <div class="card-info-title">
                                             <h3><?= $brand['nomBrand'] ?></h3>
                                             <h4>Créer en <?php if ($brand['anneeBrand'] != 0) { echo $brand['anneeBrand']; } else { echo '?'; } ?></h4>
@@ -84,9 +84,9 @@
         </main>
     </div>
 
-    <script src="../javascript/overCardEffect.js"></script>
-    <script src="../javascript/searchCountrySelect.js"></script>
-    <script src="../javascript/searchCountry.js"></script>
+    <script src="../../javascript/overCardEffect.js"></script>
+    <script src="../../javascript/searchCountrySelect.js"></script>
+    <script src="../../javascript/searchCountry.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <?php
-    include_once '../include.php';
+    include_once '../../../include.php';
 
     $email = '';
     $erreur = '';
@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../style/login_register.css">
+    <link rel="stylesheet" href="../../../style/login_register.css">
 
     <title>Document</title>
 </head>

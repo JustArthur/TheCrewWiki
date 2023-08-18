@@ -5,7 +5,7 @@ searchInput.addEventListener("keyup", () => {
     let searchWord = searchInput.value.toLowerCase();
 
     $.ajax({
-        url: '../php/getBrand.php',
+        url: '../../php/getBrand.php',
         type: 'POST',
         data: 'request=' + searchWord,
         success: function (data) {

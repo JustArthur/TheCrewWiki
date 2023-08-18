@@ -6,7 +6,7 @@ searchInput.addEventListener("keyup", () => {
     var brandId = searchInput.id
 
     $.ajax({
-        url: '../php/getCars.php',
+        url: '../../php/getCars.php',
         type: 'POST',
         data: 'request=' + searchWord + '&id_brand=' + brandId,
         success: function (data) {
