@@ -10,6 +10,15 @@ $.ajax({
     type: 'GET',
     success: function(data) {
         countries = JSON.parse(data);
+        countries.push("Tout les pays");
+
+        var indexElement = countries.indexOf("Tout les pays");
+
+        if (indexElement !== -1) {
+            countries.splice(indexElement, 1);
+            countries.unshift("Tout les pays");
+        }
+
         addCountry();
     }
 });

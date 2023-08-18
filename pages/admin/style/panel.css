@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+    list-style: none;
+
+    text-decoration: none;
+
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+
+    user-select: none;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+
+    background-color: #131315;
+
+    color: #EAF2F7;
+
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 20px;
+
+    padding: 45px 1rem;
+
+    height: max-content;
+    width: 90%;
+}
+
+main .list {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 20px;
+}
+
+main .list .list-item.box {
+    width: 100%;
+
+    border-radius: 5px;
+    border: 1px solid #2B2E39;
+
+    background: #131315;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 17px 22px;
+
+    transition-duration: 0.15s;
+}
+
+main .list .list-item.box:hover {
+    transform: translateY(-2px);
+
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 12px 13px;
+
+    transition-duration: 0.15s;
+}
+
+main .list .list-item.box:hover .textes .title,
+main .list .list-item.box:hover .icon,
+main .list .list-item.box:focus .textes .title,
+main .list .list-item.box:focus .icon {
+    color: #FFDC16;
+}
+
+main .list .list-item.box:focus {
+    border: 1px solid #ffdc1652;
+}
+
+main .list .list-item .textes .info{
+    color: #A2A9B9;
+
+    font-size: 15px;
+    font-weight: 300;
+
+    line-height: normal;
+}
+
+main .list .list-item .textes .title {
+    color: #EAF2F7;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    line-height: normal;
+}
+
+main .list .list-item .icon {
+    color: #A2A9B9;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    height: 100%;
+    width: 100%;
+}
+
+
+form input:not(input[type='file']),
+form select {
+    height: 50px;
+    width: 100%;
+
+    outline: none;
+
+    font-size: 17px;
+
+    border-radius: 5px;
+    border: 1px solid #2B2E39;
+
+    padding: 0 20px 0 15px;
+
+    background: #131315;
+
+    color: #EAF2F7;
+}
+
+form input[type="file"] {
+    cursor: pointer;
+    width: max-content;
+}
+
+form input:not(input[type='file']):focus {
+    border: 1px solid #ffdc1652;
+}
+
+form input.submit_btn[type='submit'] {
+    height: 50px;
+    width: 100%;
+
+    outline: none;
+
+    font-size: 17px;
+
+    border-radius: 5px;
+    border: none;
+
+    cursor: pointer;
+
+    padding: 0 20px 0 15px;
+
+    background: #FFDC16;
+
+    color: #131315;
+}
+
+form img{
+    width: 350px;
+}

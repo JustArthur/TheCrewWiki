@@ -5,18 +5,18 @@
     include_once('../include.php');
 
     //Récupère l'id du menu Dropdown
-    $id_cat = $_POST['request'];
+    $nomBrandForm = $_POST['request'];
 
     //Recherche tout les produits dans la BDD
     $resBrands = $DB->prepare('SELECT * FROM brands INNER JOIN country ON country.idCountry = brands.idCountry ORDER BY brands.nomBrand ASC');
     $resBrands->execute();
     $resBrands = $resBrands->fetchAll();
 
-    $resCountry = $DB->prepare("SELECT * FROM brands INNER JOIN country ON brands.idCountry = country.idCountry WHERE country.nameCountry = ?");
-    $resCountry->execute([$id_cat]);
+    $resBrandsSearch = $DB->prepare("SELECT * FROM brands INNER JOIN country ON brands.idCountry = country.idCountry WHERE nomBrand LIKE ?");
+    $resBrandsSearch->execute([$nomBrandForm . '%']);
 
     //S'il récupère 0 alors il le fait sans filtre
-    if ($_POST['request']== 'Tout les pays') {
+    if (empty($_POST['request'])) {
         foreach ($resBrands as $brand) { ?>
             <a href="#" class="card">
                 <div class="card-content">
@@ -39,7 +39,7 @@
 
     //Sinon il chercher par rapport à l'id de la categorie
     else {
-        foreach ($resCountry as $country) { ?>
+        foreach ($resBrandsSearch as $country) { ?>
             <a href="#" class="card">
                 <div class="card-content">
                     <div class="card-image">

@@ -256,8 +256,7 @@ li {
 }
 
 .search input:focus {
-    padding-left: 42px;
-    border: 2px solid #ffdc1652;
+    border: 1px solid #ffdc1652;
 }
 
 .wrapper .content .options {
@@ -272,6 +271,11 @@ li {
     display: flex;
     flex-direction: column;
     gap: 2px;
+}
+
+.wrapper .content .options li:first-child {
+    color: #FFDC16;
+    border-bottom: 1px solid #2B2E39;
 }
 
 .options::-webkit-scrollbar {

@@ -2,7 +2,7 @@
 
 include_once '../include.php';
 
-$resBrands = $DB->prepare('SELECT * FROM brands ORDER BY nomBrand ASC');
+$resBrands = $DB->prepare('SELECT * FROM brands INNER JOIN country ON country.idCountry = brands.idCountry ORDER BY brands.nomBrand ASC');
 $resBrands->execute();
 $resBrands = $resBrands->fetchAll();
 
@@ -35,7 +35,7 @@ $resBrands = $resBrands->fetchAll();
 
                 <p class="desc big">Liste de toute les marques présente en jeux.</p>
 
-                <form class="search_form">
+                <form action="" class="search_form">
                     <div class="search">
                         <i class="uil uil-search"></i>
                         <input spellcheck="false" type="text" placeholder="Rechercher une marque">
@@ -68,7 +68,7 @@ $resBrands = $resBrands->fetchAll();
                                 </div>
                                 <div class="card-info-wrapper">
                                     <div class="card-info">
-                                        <img src="../img/flags/<?= $brand['flagBrand'] ?>" class="flag">
+                                        <img src="../img/flags/<?= $brand['flagCountry'] ?>" class="flag">
                                         <div class="card-info-title">
                                             <h3><?= $brand['nomBrand'] ?></h3>
                                             <h4>Créer en <?php if ($brand['anneeBrand'] != 0) { echo $brand['anneeBrand']; } else { echo '?'; } ?></h4>
@@ -85,6 +85,7 @@ $resBrands = $resBrands->fetchAll();
 
     <script src="../javascript/overCardEffect.js"></script>
     <script src="../javascript/searchCountrySelect.js"></script>
+    <script src="../javascript/searchCountry.js"></script>
 </body>
 
 </html>
