@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/sidebar.css">
+    
     <title>Document</title>
 </head>
 <body>

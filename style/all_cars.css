@@ -31,8 +31,8 @@
     flex: 1 0 300px;
 }
 
-.card.summit { background-color: #FFDC16; }
-.card.battlePass { background-color: #4285f4;}
+.card.summit { background-color: #FF00B9; }
+.card.battlePass { background-color: #FFA71B;}
 .card.icon { background-color: #F61156; }
 
 .list-card.cars .card{

@@ -25,6 +25,7 @@
 
     <link rel="stylesheet" href="../style/index.css">
     <link rel="stylesheet" href="../style/all_cars.css">
+    <link rel="stylesheet" href="../style/sidebar.css">
 
     <title>Document</title>
 </head>
@@ -39,7 +40,7 @@
 
                 <p class="desc big">Liste de tout les véhicules.</p>
 
-                <form action="" class="search_form">
+                <form id="formulaire" action="" class="search_form">
                     <div class="search">
                         <i class="uil uil-search"></i>
                         <input spellcheck="false" type="text" id="<?= $_GET['id_brand'] ?>" placeholder="Rechercher un modèle">
@@ -52,7 +53,7 @@
                         switch ($car['summitReward']) {
                             case 1:
                                 $summit = "summit";
-                                $text_summit = "<h4>Voiture Summit</h4>";
+                                $text_summit = "<h4>Voiture d'un Summit</h4>";
                                 break;
 
                             default:
@@ -64,7 +65,7 @@
                         switch ($car['battlepassReward']) {
                             case 1:
                                 $battlepass = "battlePass";
-                                $text_battlepass = "<h4>Voiture BattlePass</h4>";
+                                $text_battlepass = "<h4>Voiture d'un Motorpass</h4>";
                                 break;
 
                             default:
@@ -81,10 +82,9 @@
 
                             default:
                                 $icon = "icon";
-                                $text_icon = "<h4>Voiture Icone " . $car['iconReward'] . "</h4>";
+                                $text_icon = "<h4>Voiture de l'icone " . $car['iconReward'] . "</h4>";
                                 break;
                         }
-
 
                         switch ($car['buckPrice']) {
                             case 0:
@@ -137,6 +137,17 @@
         </main>
 
     </div>
+
+    <script>
+        //-- Pour la compatibilité KeyPass et éviter le enter du submit si l'utilisateur n'as pas rempli les 3 champs ----------------
+        const desacForm = document.getElementById('formulaire');
+
+        desacForm.addEventListener('keydown', function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+            }
+        });
+    </script>
 
     <script src="../javascript/overCardEffect.js"></script>
     <script src="../javascript/searchCar.js"></script>

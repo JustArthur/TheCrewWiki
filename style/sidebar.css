@@ -1,0 +1,158 @@
+header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 99;
+
+    height: 100%;
+    width: 311px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    padding: 40px 30px;
+
+    border-right: 1px solid #2B2E39;
+}
+
+header .logo {
+    color: #EAF2F7;
+
+    font-size: 40px;
+    font-weight: 700;
+
+    line-height: normal;
+
+    transition: 0.3s;
+}
+
+.yellow {
+    color: #FFDC16;
+}
+
+.border {
+    height: 1px;
+    width: 100%;
+
+    background-color: #2B2E39;
+
+    margin-top: calc(24px - 13px);
+}
+
+header .list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 34px;
+}
+
+header .secondary-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+header a:is(.list-item) {
+    color: #EAF2F7;
+
+    font-size: 15px;
+    font-weight: 300;
+
+    line-height: normal;
+
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+header .list-item.title {
+    font-weight: 700;
+}
+
+header .secondary-list a:is(.list-item) {
+    color: #A2A9B9;
+    transform: translateX(20px);
+}
+
+header a:is(.list-item):hover {
+    transform: translateX(10px);
+    color: #FFDC16;
+
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+header .secondary-list a:is(.list-item):hover {
+    transform: translateX(30px);
+}
+
+header .account {
+    margin: auto auto 0 0;
+
+    display: flex;
+    gap: 20px;
+}
+
+header .account .input_btn {
+    border: 1px solid #FFDC16;
+    border-radius: 5px;
+
+    color: #EAF2F7;
+
+    padding: 10px 1rem;
+}
+
+header .account .input_btn.login {
+    background-color: #FFDC16;
+    color: #2B2E39;
+}
+
+
+
+@media screen and (max-width: 830px) {
+    header {
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+
+        height: 80px;
+        width: 100%;
+
+        border-right: none;
+        border-bottom: 1px solid #2B2E39;
+
+        gap: 0;
+
+        padding: 0 2rem;
+
+        background: rgba(19, 19, 21, 0.01);
+        backdrop-filter: blur(19px);
+
+        transition: 0.3s;
+    }
+
+    header.scrolled-down {
+        height: 65px;
+
+        transition: 0.3s;
+    }
+
+    header.scrolled-down .logo {
+        font-size: 30px;
+
+        transition: 0.3s;
+    }
+
+    header .list {
+        display: none;
+    }
+
+    header .border {
+        display: none;
+    }
+
+    header .account {
+        margin: 0;
+    }
+}

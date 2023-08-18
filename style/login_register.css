@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+    list-style: none;
+
+    text-decoration: none;
+
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+
+    user-select: none;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+
+    background-color: #131315;
+
+    color: #EAF2F7;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 20px;
+
+    padding: 45px 1rem;
+
+    width: 50%;
+    height: max-content;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    height: 100%;
+    width: 100%;
+}
+
+
+form input {
+    height: 50px;
+    width: 100%;
+
+    outline: none;
+
+    font-size: 17px;
+
+    border-radius: 5px;
+    border: 1px solid #2B2E39;
+
+    padding: 0 20px 0 15px;
+
+    background: #131315;
+
+    color: #EAF2F7;
+}
+
+form input:focus {
+    border: 1px solid #FFDC16;
+}
+
+form input[type="submit"] {
+    background-color: #FFDC16;
+
+    color: #131315;
+
+    cursor: pointer;
+}
+
+main a {
+    color: #FFDC16;
+    text-decoration: underline;
+}
+
+.info_pass {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    color: #ffffff80;
+    font-size: 0.9em;
+    margin-top: 8px;
+}
+
+.info_pass .icon {
+    color: #FFDC16;
+}

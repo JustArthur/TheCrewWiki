@@ -30,6 +30,7 @@
 
     <link rel="stylesheet" href="../style/index.css">
     <link rel="stylesheet" href="../style/all_cars.css">
+    <link rel="stylesheet" href="../style/sidebar.css">
 
     <title>Document</title>
 </head>

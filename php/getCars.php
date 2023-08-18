@@ -25,7 +25,7 @@
             switch($car['summitReward']) {
                 case 1:
                     $summit = "summit";
-                    $text_summit = "<h4>Voiture Summit</h4>";
+                    $text_summit = "<h4>Voiture d'un Summit</h4>";
                     break;
 
                 default:
@@ -37,9 +37,9 @@
             switch($car['battlepassReward']) {
                 case 1:
                     $battlepass = "battlePass";
-                    $text_battlepass = "<h4>Voiture BattlePass</h4>";
+                    $text_battlepass = "<h4>Voiture d'un Motorpass</h4>";
                     break;
-                    
+
                 default:
                     $battlepass = "";
                     $text_battlepass = "<h4 style='display: none'></h4>";
@@ -51,13 +51,12 @@
                     $icon = "";
                     $text_icon = "<h4 style='display: none'></h4>";
                     break;
-                    
+
                 default:
                     $icon = "icon";
-                    $text_icon = "<h4>Voiture Icone " . $car['iconReward'] . "</h4>";
+                    $text_icon = "<h4>Voiture de l'icone " . $car['iconReward'] . "</h4>";
                     break;
             }
-
 
             switch($car['buckPrice']) {
                 case 0:
@@ -114,7 +113,7 @@
             switch($car['summitReward']) {
                 case 1:
                     $summit = "summit";
-                    $text_summit = "<h4>Voiture Summit</h4>";
+                    $text_summit = "<h4>Voiture d'un Summit</h4>";
                     break;
 
                 default:
@@ -126,9 +125,9 @@
             switch($car['battlepassReward']) {
                 case 1:
                     $battlepass = "battlePass";
-                    $text_battlepass = "<h4>Voiture BattlePass</h4>";
+                    $text_battlepass = "<h4>Voiture d'un Motorpass</h4>";
                     break;
-                    
+
                 default:
                     $battlepass = "";
                     $text_battlepass = "<h4 style='display: none'></h4>";
@@ -140,10 +139,10 @@
                     $icon = "";
                     $text_icon = "<h4 style='display: none'></h4>";
                     break;
-                    
+
                 default:
                     $icon = "icon";
-                    $text_icon = "<h4>Voiture Icone " . $car['iconReward'] . "</h4>";
+                    $text_icon = "<h4>Voiture de l'icone " . $car['iconReward'] . "</h4>";
                     break;
             }
 
