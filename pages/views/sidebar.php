@@ -12,8 +12,8 @@
             <li class="list-item title">The Crew 2</li>
 
             <a href="<?= ROOT_PATH ?>pages/client/brands" class="list-item">Liste des marques</a>
-            <a href="#" class="list-item">Liste des activités</a>
-            <a href="#" class="list-item">Entreprise Motorflix</a>
+            <a href="<?= ROOT_PATH ?>pages/client/activities" class="list-item">Liste des activités</a>
+            <a href="<?= ROOT_PATH ?>pages/client/motorflix" class="list-item">Entreprise Motorflix</a>
         </ul>
 
     </ul>
