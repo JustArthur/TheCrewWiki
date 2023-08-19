@@ -11,7 +11,7 @@
         <ul class="secondary-list">
             <li class="list-item title">The Crew 2</li>
 
-            <a href="<?= ROOT_PATH ?>pages/client/brands" class="list-item">Liste des marques</a>
+            <a href="brands" class="list-item">Liste des marques</a>
             <a href="#" class="list-item">Liste des activités</a>
             <a href="#" class="list-item">Entreprise Motorflix</a>
         </ul>
@@ -33,3 +33,4 @@
 
 <script src="<?= ROOT_PATH ?>javascript/deconnexion.js"></script>
 <script src="<?= ROOT_PATH ?>javascript/navbar.js"></script>
+<script src="<?= ROOT_PATH ?>javascript/sidebar.js"></script>

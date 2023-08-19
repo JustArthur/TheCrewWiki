@@ -92,6 +92,11 @@ header .secondary-list a:is(.list-item):hover {
     transform: translateX(30px);
 }
 
+header .secondary-list a:is(.list-item).active {
+    color: #FFDC16;
+    transform: translateX(30px);
+}
+
 header .account {
     margin: auto auto 0 0;
 

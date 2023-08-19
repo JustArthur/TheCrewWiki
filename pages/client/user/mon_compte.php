@@ -38,7 +38,7 @@
                     //---- [ Importation des cartes ] ----//
                     include_once '../../views/card.php';
 
-                    card('settings/personalisation', 'edit', 'Personnalisations', 'Personnalise ton compte à ta guise');
+                    card('settings/personalisation', 'edit', 'Personnalisation', 'Personnalise ton compte à ta guise');
                     card('settings/garage', 'garage', 'Garage', 'Montre aux autres personnes ta collection de véhicules');
                     card('settings/friends', 'person_add', 'Amis', 'Ajoute des amis, vois leurs avancements dans le jeu');
                     card('settings/security', 'security', 'Sécurité', 'Sécurise ton compte pour combattre les méchants');

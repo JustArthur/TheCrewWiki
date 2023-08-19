@@ -14,8 +14,8 @@ $resBrands = $DB->prepare('SELECT * FROM brands INNER JOIN country ON country.id
 $resBrands->execute([$_POST['id_brand']]);
 $resBrands = $resBrands->fetch();
 
-$resBrandsSearch = $DB->prepare("SELECT * FROM cars INNER JOIN brands ON cars.idBrand = brands.idBrand WHERE cars.nomCar LIKE ?");
-$resBrandsSearch->execute(['%' . $nomBrandForm . '%']);
+$resBrandsSearch = $DB->prepare("SELECT * FROM cars INNER JOIN brands ON cars.idBrand = brands.idBrand WHERE brands.idBrand = ? AND cars.nomCar LIKE ?");
+$resBrandsSearch->execute([$_POST['id_brand'], '%' . $nomBrandForm . '%']);
 
 if (empty($_POST['request'])) {
     foreach ($selectAllCarsFromBrand as $car) {
