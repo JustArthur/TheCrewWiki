@@ -34,7 +34,7 @@
             <div class="content">
                 <div class="title">Liste des marques</div>
 
-                <p class="desc big">Liste de toute les marques présente en jeux.</p>
+                <p class="desc big">Liste de toutes les marques présentes en jeu.</p>
 
                 <form id="formulaire" action="" class="search_form">
                     <div class="search">
