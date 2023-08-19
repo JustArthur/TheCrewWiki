@@ -19,9 +19,13 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="../../style/index.css">
-    <link rel="stylesheet" href="../../style/all_cars.css">
-    <link rel="stylesheet" href="../../style/sidebar.css">
+    <link rel="stylesheet" href="../../style/mainStyle.css">
+
+    <link rel="stylesheet" href="../../style/searchInput.css">
+    <link rel="stylesheet" href="../../style/selectStyle.css">
+    <link rel="stylesheet" href="../../style/cardStyle.css">
+
+    <link rel="stylesheet" href="../../style/sidebarStyle.css">
 
     <title>TheWikiCrew | Marques</title>
 </head>
@@ -61,27 +65,22 @@
 
 
                 <ul class="list-card" id="cards">
-                    <?php foreach ($resBrands as $brand) {
+                    <?php 
+                        //---- [ Importation des cartes ] ----//
+                        include_once '../views/card.php';
+
+                        foreach ($resBrands as $brand) {
+
+                            $link = "cars?id_brand=" . $brand['idBrand'];
+                            $img = "../../img/brands/" . $brand['nomBrand'] . "/logo/" . $brand['imgBrand'];
+                            $imgFlag = "../../img/flags/" . $brand['flagCountry'];
+                            $nomBrand = $brand['nomBrand'];
+                            if ($brand['anneeBrand'] != 0) { $date = $brand['anneeBrand']; } else { $date = '?'; }
                         
+                            brandCard($link, $img, $imgFlag, $nomBrand, $date);
+                        }
                         
-                        ?>
-                        <a href="cars?id_brand=<?= $brand['idBrand'] ?>" class="card">
-                            <div class="card-content">
-                                <div class="card-image">
-                                    <img src="../../img/brands/<?= $brand['nomBrand'] ?>/logo/<?= $brand['imgBrand'] ?>">
-                                </div>
-                                <div class="card-info-wrapper">
-                                    <div class="card-info">
-                                        <img src="../../img/flags/<?= $brand['flagCountry'] ?>" class="flag">
-                                        <div class="card-info-title">
-                                            <h3><?= $brand['nomBrand'] ?></h3>
-                                            <h4>Créer en <?php if ($brand['anneeBrand'] != 0) { echo $brand['anneeBrand']; } else { echo '?'; } ?></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    <?php } ?>
+                    ?>
                 </ul>
             </div>
         </main>

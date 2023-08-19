@@ -8,8 +8,9 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
-    <link rel="stylesheet" href="style/index.css">
-    <link rel="stylesheet" href="style/sidebar.css">
+    <link rel="stylesheet" href="./style/mainStyle.css">
+
+    <link rel="stylesheet" href="./style/sidebarStyle.css">
     
     <title>TheWikiCrew | Introduction</title>
 </head>

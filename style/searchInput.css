@@ -1,0 +1,39 @@
+.content .search {
+    position: relative;
+}
+
+.search i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+
+    transform: translateY(-50%);
+
+    color: #EAF2F7;
+
+    font-size: 20px;
+
+    pointer-events: none;
+}
+
+.search input {
+    height: 50px;
+    width: 100%;
+
+    outline: none;
+
+    font-size: 17px;
+
+    border-radius: 10px;
+    border: 1px solid #2B2E39;
+
+    padding: 0 20px 0 43px;
+
+    background: #131315;
+
+    color: #EAF2F7;
+}
+
+.search input:focus {
+    border: 1px solid #ffdc1652;
+}

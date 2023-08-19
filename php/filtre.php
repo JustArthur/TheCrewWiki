@@ -2,7 +2,8 @@
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
 
-    include_once('../include.php');
+    include_once '../include.php';
+    include_once '../pages/views/card.php';
 
     $id_cat = $_POST['request'];
 
@@ -14,44 +15,28 @@
     $resCountry->execute([$id_cat]);
 
     if ($_POST['request']== 'Tout les pays') {
-        foreach ($resBrands as $brand) { ?>
-            <a href="brand?id_brand=<?= $brand['idBrand'] ?>" class="card">
-                <div class="card-content">
-                    <div class="card-image">
-                        <img src="../../img/brands/<?= $brand['nomBrand'] ?>/logo/<?= $brand['imgBrand'] ?>">
-                    </div>
-                    <div class="card-info-wrapper">
-                        <div class="card-info">
-                            <img src="../../img/flags/<?= $brand['flagCountry'] ?>" class="flag">
-                            <div class="card-info-title">
-                                <h3><?= $brand['nomBrand'] ?></h3>
-                                <h4>Créer en <?php if ($brand['anneeBrand'] != 0) { echo $brand['anneeBrand']; } else { echo '?'; } ?></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        <?php }
+        foreach ($resBrands as $brand) {
+
+            $link = "cars?id_brand=" . $brand['idBrand'];
+            $img = "../../img/brands/" . $brand['nomBrand'] . "/logo/" . $brand['imgBrand'];
+            $imgFlag = "../../img/flags/" . $brand['flagCountry'];
+            $nomBrand = $brand['nomBrand'];
+            if ($brand['anneeBrand'] != 0) { $date = $brand['anneeBrand']; } else { $date = "?"; }
+        
+            brandCard($link, $img, $imgFlag, $nomBrand, $date);
         }
+    }
 
     else {
-        foreach ($resCountry as $country) { ?>
-            <a href="brand?id_brand=<?= $country['idBrand'] ?>" class="card">
-                <div class="card-content">
-                    <div class="card-image">
-                        <img src="../../img/brands/<?= $country['nomBrand'] ?>/logo/<?= $country['imgBrand'] ?>">
-                    </div>
-                    <div class="card-info-wrapper">
-                        <div class="card-info">
-                            <img src="../../img/flags/<?= $country['flagCountry'] ?>" class="flag">
-                            <div class="card-info-title">
-                                <h3><?= $country['nomBrand'] ?></h3>
-                                <h4>Créer en <?php if ($country['anneeBrand'] != 0) { echo $country['anneeBrand']; } else { echo '?'; } ?></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        <?php }
+        foreach ($resCountry as $brand) {
+            
+            $link = "cars?id_brand=" . $brand['idBrand'];
+            $img = "../../img/brands/" . $brand['nomBrand'] . "/logo/" . $brand['imgBrand'];
+            $imgFlag = "../../img/flags/" . $brand['flagCountry'];
+            $nomBrand = $brand['nomBrand'];
+            if ($brand['anneeBrand'] != 0) { $date = $brand['anneeBrand']; } else { $date = "?"; }
+        
+            brandCard($link, $img, $imgFlag, $nomBrand, $date);
+        }
     }
 ?>

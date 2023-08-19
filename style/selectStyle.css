@@ -1,0 +1,154 @@
+form {
+    width: 100%;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.select-btn,
+li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.select-btn {
+    height: 65px;
+
+    padding: 0 20px;
+
+    font-size: 22px;
+
+    border-radius: 10px;
+    border: 1px solid #2B2E39;
+
+    justify-content: space-between;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+    background-color: #131315;
+}
+
+.select-btn i {
+    font-size: 31px;
+    transition: transform 0.3s linear;
+}
+
+.wrapper.active .select-btn i {
+    transform: rotate(-180deg);
+}
+
+.wrapper .content {
+    display: none;
+
+    padding: 20px;
+
+    margin-top: 18px;
+
+    background: #131315;
+
+    border: 1px solid #2B2E39;
+    border-radius: 10px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper.active .content {
+    display: block;
+}
+
+.content .search {
+    position: relative;
+}
+
+.search i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+
+    transform: translateY(-50%);
+
+    color: #EAF2F7;
+
+    font-size: 20px;
+
+    pointer-events: none;
+}
+
+.search input {
+    height: 50px;
+    width: 100%;
+
+    outline: none;
+
+    font-size: 17px;
+
+    border-radius: 10px;
+    border: 1px solid #2B2E39;
+
+    padding: 0 20px 0 43px;
+
+    background: #131315;
+
+    color: #EAF2F7;
+}
+
+.search input:focus {
+    border: 1px solid #ffdc1652;
+}
+
+.wrapper .content .options {
+    margin-top: 10px;
+
+    max-height: 250px;
+
+    overflow-y: auto;
+
+    padding-right: 7px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.wrapper .content .options li:first-child {
+    color: #FFDC16;
+    border-bottom: 1px solid #2B2E39;
+}
+
+.options::-webkit-scrollbar {
+    width: 7px;
+}
+
+.options::-webkit-scrollbar-track {
+    background: #f1f1f1;
+
+    border-radius: 25px;
+}
+
+.options::-webkit-scrollbar-thumb {
+    background: #ccc;
+
+    border-radius: 25px;
+}
+
+.options::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+}
+
+.options li {
+    height: 50px;
+
+    padding: 15px 13px;
+
+    font-size: 21px;
+}
+
+.options li:hover,
+li.selected {
+    background: #242429;
+    
+    border-radius: 5px;
+    border: 1px solid #2B2E39;
+}

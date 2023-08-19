@@ -1,6 +1,6 @@
 <header id="nav" class="sidebar">
     <div class="logo">
-        <a><span class="yellow">The</span>Wiki<span class="yellow">Crew</span></a>
+        <a>TheWiki<span class="yellow">Crew</span></a>
     </div>
 
     <div class="border"></div>
@@ -26,11 +26,19 @@
     <?php } else {?>
         <div class="account">
             <a class="input_btn login" href="<?= ROOT_PATH ?>pages/client/user/mon_compte">Mon compte</a>
-            <div onclick="deconnexion()" class="input_btn deco">Se déconecter</div>
+            <div onclick="deconnexion()" class="input_btn deco">Se déconnecter</div>
         </div>
     <?php } ?>
 </header>
 
-<script src="<?= ROOT_PATH ?>javascript/deconnexion.js"></script>
+<script>
+    function deconnexion() {
+        var choix = confirm("Attention, tu vas être déconnecté, est-tu sûr de toi ?");
+
+        if (choix) {
+            window.location.href = "<?= ROOT_PATH ?>pages/src/deconnexion";
+        } else {}
+    }
+</script>
 <script src="<?= ROOT_PATH ?>javascript/navbar.js"></script>
 <script src="<?= ROOT_PATH ?>javascript/sidebar.js"></script>
