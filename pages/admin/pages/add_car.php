@@ -29,7 +29,7 @@
                     $dossierBrand = '../../../img/brands/' . $brandName['nomBrand'];
                     $dossierCarBrand = $dossierBrand . '/cars';
 
-                    if(!is_dir($dossierCarsBrands)) { mkdir($dossierCarsBrands); }
+                    if(!is_dir($dossierCarBrand)) { mkdir($dossierCarBrand); }
 
                     $chemin_imgBrand = $dossierCarBrand . '/' . $_FILES['imgBrand']['name'];
 
