@@ -32,6 +32,12 @@ include_once '../../include.php';
 
                 <p class="desc big">Liste de toutes les activités présenteq en jeu.</p>
 
+                <form id="formulaire" action="" class="search_form">
+                    <div class="search">
+                        <i class="uil uil-search"></i>
+                        <input spellcheck="false" type="text" placeholder="Rechercher une activité">
+                    </div>
+                </form>
             </div>
         </main>
     </div>
