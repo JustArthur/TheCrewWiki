@@ -31,14 +31,5 @@
     <?php } ?>
 </header>
 
-<script>
-    function deconnexion() {
-        var choix = confirm("Attention, tu vas être déconnecté, est-tu sûr de toi ?");
-
-        if (choix) {
-            window.location.href = "<?= ROOT_PATH ?>pages/src/deconnexion";
-        } else {}
-    }
-</script>
-
+<script src="<?= ROOT_PATH ?>javascript/deconnexion.js"></script>
 <script src="<?= ROOT_PATH ?>javascript/navbar.js"></script>

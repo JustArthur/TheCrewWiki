@@ -48,6 +48,7 @@
                     if($_SESSION['utilisateur'][3] == 3) {
                         card('../../admin/panel', 'admin_panel_settings', 'Administrateur', 'Accède au panel administrateur');
                     }
+                    
                     card('../../src/deconnexion', 'logout', 'Déconnexion', 'Déconnecte toi de ton compte');
 
                 ?>
