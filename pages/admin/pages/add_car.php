@@ -29,6 +29,8 @@
                     $dossierBrand = '../../../img/brands/' . $brandName['nomBrand'];
                     $dossierCarBrand = $dossierBrand . '/cars';
 
+                    if(!is_dir($dossierCarsBrands)) { mkdir($dossierCarsBrands); }
+
                     $chemin_imgBrand = $dossierCarBrand . '/' . $_FILES['imgBrand']['name'];
 
                     $res_livretFamille = move_uploaded_file($_FILES['imgBrand']['tmp_name'], $chemin_imgBrand);
