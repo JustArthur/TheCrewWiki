@@ -29,7 +29,7 @@
                 <p class="desc">Bienvenue dans le monde palpitant et infini de The Crew 2 ! Plongez vous dans un univers où la vitesse, la compétition et l'exploration fusionnent pour créer une expérience de jeu unique en son genre. Préparez vous à découvrir les détails les plus captivants, les astuces les plus pointues et les stratégies les plus efficaces pour exceller dans ce monde ouvert plein d'opportunités. Accrochez vous bien, car l'aventure débute ici !</p>
 
                 <ul class="list">
-                    <a href="#" class="list-item box">
+                    <a href="<?= ROOT_PATH ?>pages/client/brands" class="list-item box">
                         <div class="textes">
                             <h3 class="info">The Crew 2 - Les véhicules</h3>
                             <h3 class="title">Apprenez en plus sur les véhicules du jeu</h3>
@@ -38,7 +38,7 @@
                         <span class="material-symbols-rounded icon">arrow_forward</span>
                     </a>
 
-                    <a href="#" class="list-item box">
+                    <a href="<?= ROOT_PATH ?>pages/client/activities" class="list-item box">
                         <div class="textes">
                             <h3 class="info">The Crew 2 - Les activités</h3>
                             <h3 class="title">Apprenez en plus sur les activités</h3>
@@ -47,7 +47,7 @@
                         <span class="material-symbols-rounded icon">arrow_forward</span>
                     </a>
 
-                    <a href="#" class="list-item box">
+                    <a href="<?= ROOT_PATH ?>pages/client/motorflix" class="list-item box">
                         <div class="textes">
                             <h3 class="info">The Crew 2 - Motorflix</h3>
                             <h3 class="title">Apprenez en plus sur l'entreprise Motorflix</h3>
