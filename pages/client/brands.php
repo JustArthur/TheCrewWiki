@@ -61,8 +61,11 @@
 
 
                 <ul class="list-card" id="cards">
-                    <?php foreach ($resBrands as $brand) { ?>
-                        <a href="brand?id_brand=<?= $brand['idBrand'] ?>" class="card">
+                    <?php foreach ($resBrands as $brand) {
+                        
+                        
+                        ?>
+                        <a href="cars?id_brand=<?= $brand['idBrand'] ?>" class="card">
                             <div class="card-content">
                                 <div class="card-image">
                                     <img src="../../img/brands/<?= $brand['nomBrand'] ?>/logo/<?= $brand['imgBrand'] ?>">

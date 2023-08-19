@@ -1,5 +1,5 @@
 <?php
-    include_once '../include.php';
+    include_once '../../include.php';
 
     $infoCar = $DB->prepare(
         "SELECT * FROM cars
@@ -28,9 +28,9 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="../style/index.css">
-    <link rel="stylesheet" href="../style/all_cars.css">
-    <link rel="stylesheet" href="../style/sidebar.css">
+    <link rel="stylesheet" href="../../style/index.css">
+    <link rel="stylesheet" href="../../style/all_cars.css">
+    <link rel="stylesheet" href="../../style/sidebar.css">
 
     <title>Document</title>
 </head>
@@ -42,7 +42,7 @@
             <div class="content">
                 <div class="title"><?= $infoCar['nomCar'] ?></div>
 
-                <img class="carImg" src="../img/brands/<?= $infoCar['nomBrand'] ?>/cars/<?= $infoCar['imgCar'] ?>" alt="">
+                <img class="carImg" src="../../img/brands/<?= $infoCar['nomBrand'] ?>/cars/<?= $infoCar['imgCar'] ?>" alt="">
             </div>
         </main>
 

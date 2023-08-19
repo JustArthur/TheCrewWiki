@@ -15,7 +15,7 @@
 
     if (empty($_POST['request'])) {
         foreach ($resBrands as $brand) { ?>
-            <a href="brand?id_brand=<?= $brand['idBrand'] ?>" class="card">
+            <a href="cars?id_brand=<?= $brand['idBrand'] ?>" class="card">
                 <div class="card-content">
                     <div class="card-image">
                         <img src="../../img/brands/<?= $brand['nomBrand'] ?>/logo/<?= $brand['imgBrand'] ?>">
@@ -36,7 +36,7 @@
 
     else {
         foreach ($resBrandsSearch as $country) { ?>
-            <a href="brand?id_brand=<?= $country['idBrand'] ?>" class="card">
+            <a href="cars?id_brand=<?= $country['idBrand'] ?>" class="card">
                 <div class="card-content">
                     <div class="card-image">
                         <img src="../../img/brands/<?= $country['nomBrand'] ?>/logo/<?= $country['imgBrand'] ?>">

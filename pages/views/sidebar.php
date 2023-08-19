@@ -11,7 +11,7 @@
         <ul class="secondary-list">
             <li class="list-item title">The Crew 2</li>
 
-            <a href="<?= ROOT_PATH ?>pages/client/all_cars" class="list-item">Liste des véhicules</a>
+            <a href="<?= ROOT_PATH ?>pages/client/brands" class="list-item">Liste des marques</a>
             <a href="#" class="list-item">Liste des activités</a>
             <a href="#" class="list-item">Entreprise Motorflix</a>
         </ul>
@@ -26,8 +26,19 @@
     <?php } else {?>
         <div class="account">
             <a class="input_btn login" href="<?= ROOT_PATH ?>pages/client/user/mon_compte">Mon compte</a>
+            <div onclick="deconnexion()" class="input_btn deco">Se déconecter</div>
         </div>
     <?php } ?>
 </header>
+
+<script>
+    function deconnexion() {
+        var choix = confirm("Attention, tu vas être déconnecté, est-tu sûr de toi ?");
+
+        if (choix) {
+            window.location.href = "<?= ROOT_PATH ?>pages/src/deconnexion";
+        } else {}
+    }
+</script>
 
 <script src="<?= ROOT_PATH ?>javascript/navbar.js"></script>

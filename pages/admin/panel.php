@@ -1,3 +1,12 @@
+<?php
+    include_once '../../include.php';
+
+    if($_SESSION['utilisateur'][3] != 3) {
+        header('Location: ../../index');
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -16,7 +25,7 @@
     <main>
         <h1>The Crew 2 - Ajouter des données</h1>
         <ul class="list">
-            <a href="add_brand" class="list-item box">
+            <a href="pages/add_brand" class="list-item box">
                 <div class="textes">
                     <h3 class="info">The Crew 2 - Les marques</h3>
                     <h3 class="title">Ajouter des marques dans la base de données</h3>
@@ -25,7 +34,7 @@
                 <span class="material-symbols-rounded icon">arrow_forward</span>
             </a>
 
-            <a href="add_car" class="list-item box">
+            <a href="pages/add_car" class="list-item box">
                 <div class="textes">
                     <h3 class="info">The Crew 2 - Les véhicules</h3>
                     <h3 class="title">Ajouter des véhicules dans la base de données</h3>

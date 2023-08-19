@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+    list-style: none;
+
+    text-decoration: none;
+
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+
+    user-select: none;
+}
+
+body {
+    position: relative;
+
+    height: 100vh;
+    width: 100%;
+
+    background-color: #131315;
+
+    color: #EAF2F7;
+}
+
+.container {
+    position: absolute;
+    left: 311px;
+
+    width: calc(100% - 311px);
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 1rem;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 1rem;
+}
+
+
+
+
+
+:root {
+    --bg-color: rgb(20, 20, 20);
+    --card-color: #131315;
+}
+
+.list-card {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    width: 100%;
+}
+
+.list-card:hover>.card::after {
+    opacity: 1;
+}
+
+.card {
+    background-color: #2B2E39;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 260px;
+    width: 300px;
+
+    position: relative;
+
+    flex: 1 0 300px;
+}
+
+.card:last-child {
+    background-color: red;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card::before,
+.card::after {
+    content: "";
+    border-radius: inherit;
+
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    opacity: 0;
+    
+    transition: opacity 500ms;
+}
+
+.card::before {
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.06),
+            transparent 40%);
+    z-index: 3;
+}
+
+.card::after {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.4),
+            transparent 40%);
+    z-index: 1;
+}
+
+.card>.card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    background-color: var(--card-color);
+
+    border-radius: inherit;
+
+    inset: 1px;
+
+    padding: 10px;
+
+    position: absolute;
+
+    z-index: 2;
+}
+
+/* -- ↓ ↓ ↓ extra card content styles ↓ ↓ ↓ -- */
+
+h3,
+h4 {
+    color: #EAF2F7;
+
+    font-weight: 400;
+
+    margin: 0px;
+}
+
+.icon {
+    color: #EAF2F7;
+}
+
+.card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 140px;
+    width: 100%;
+    
+    overflow: hidden;
+}
+
+.card-image > .icon {
+    font-size: 6em;
+    opacity: 0.25;
+}
+
+.card-info-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    flex-grow: 1;
+
+    padding: 0px 20px;
+}
+
+.card-info {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+}
+
+.card-info > .icon {  
+    font-size: 1em;
+    line-height: 20px;
+
+    height: 20px;
+}
+
+.card-info-title>h3 {
+    font-size: 1.1em;
+    line-height: 20px;
+}
+
+.card-info-title>h4 {
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.85em;
+
+    margin-top: 8px;
+}
+
+
+@media screen and (max-width: 830px) {
+    .container {
+        left: 0;
+        top: 80px;
+
+        width: 100%;
+    }
+}

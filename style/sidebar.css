@@ -16,6 +16,9 @@ header {
     padding: 40px 30px;
 
     border-right: 1px solid #2B2E39;
+
+    background: rgba(19, 19, 21, 0.01);
+    backdrop-filter: blur(19px);
 }
 
 header .logo {
@@ -65,6 +68,8 @@ header a:is(.list-item) {
     line-height: normal;
 
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    width: max-content;
 }
 
 header .list-item.title {
@@ -91,7 +96,10 @@ header .account {
     margin: auto auto 0 0;
 
     display: flex;
+    flex-direction: column;
     gap: 20px;
+
+    width: 100%;
 }
 
 header .account .input_btn {
@@ -101,11 +109,23 @@ header .account .input_btn {
     color: #EAF2F7;
 
     padding: 10px 1rem;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
 }
 
 header .account .input_btn.login {
     background-color: #FFDC16;
     color: #2B2E39;
+}
+
+header .account .input_btn.deco {
+    background-color: red;
+    border: 1px solid red;
 }
 
 
@@ -125,9 +145,6 @@ header .account .input_btn.login {
         gap: 0;
 
         padding: 0 2rem;
-
-        background: rgba(19, 19, 21, 0.01);
-        backdrop-filter: blur(19px);
 
         transition: 0.3s;
     }
@@ -154,5 +171,11 @@ header .account .input_btn.login {
 
     header .account {
         margin: 0;
+        width: max-content;
+        flex-direction: row;
+    }
+
+    header .account .input_btn {
+        width: max-content;
     }
 }

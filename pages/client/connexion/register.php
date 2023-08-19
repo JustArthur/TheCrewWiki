@@ -1,6 +1,11 @@
 <?php
     include_once '../../../include.php';
 
+    if(!empty($_SESSION['utilisateur'])) {
+        header('Location: ../../../index');
+        exit();
+    }
+
     $identifiant = '';
     $email = '';
     $erreur = '';
