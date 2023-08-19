@@ -36,7 +36,7 @@
 
                 <p class="desc big">Liste de toute les marques présente en jeux.</p>
 
-                <form action="" class="search_form">
+                <form id="formulaire" action="" class="search_form">
                     <div class="search">
                         <i class="uil uil-search"></i>
                         <input spellcheck="false" type="text" placeholder="Rechercher une marque">
@@ -86,6 +86,17 @@
             </div>
         </main>
     </div>
+
+    <script>
+        //-- Pour la compatibilité KeyPass et éviter le enter du submit si l'utilisateur n'as pas rempli les 3 champs ----------------
+        const desacForm = document.getElementById('formulaire');
+
+        desacForm.addEventListener('keydown', function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+            }
+        });
+    </script>
 
     <script src="../../javascript/overCardEffect.js"></script>
     <script src="../../javascript/searchCountrySelect.js"></script>
