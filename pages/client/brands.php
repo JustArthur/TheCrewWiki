@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../../style/all_cars.css">
     <link rel="stylesheet" href="../../style/sidebar.css">
 
-    <title>Document</title>
+    <title>TheWikiCrew | Marques</title>
 </head>
 
 <body>

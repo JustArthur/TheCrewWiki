@@ -1,6 +1,6 @@
 <header id="nav" class="sidebar">
     <div class="logo">
-        <a>Wiki<span class="yellow">Crew</span></a>
+        <a><span class="yellow">The</span>Wiki<span class="yellow">Crew</span></a>
     </div>
 
     <div class="border"></div>

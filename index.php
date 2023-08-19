@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/sidebar.css">
     
-    <title>Document</title>
+    <title>TheWikiCrew | Introduction</title>
 </head>
 <body>
     <div class="container">

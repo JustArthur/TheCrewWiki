@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../../style/mon_compte.css">
     <link rel="stylesheet" href="../../../style/sidebar.css">
 
-    <title>WikiCrew | Compte de <?= $_SESSION['utilisateur'][1] ?></title>
+    <title>TheWikiCrew | Compte de <?= $_SESSION['utilisateur'][1] ?></title>
 </head>
 
 <body>
