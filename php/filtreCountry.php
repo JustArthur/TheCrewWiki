@@ -14,7 +14,7 @@
     $resCountry = $DB->prepare("SELECT * FROM brands INNER JOIN country ON brands.idCountry = country.idCountry WHERE country.nameCountry = ?");
     $resCountry->execute([$id_cat]);
 
-    if ($_POST['request']== 'Tout les pays') {
+    if ($_POST['request']== 'Tous les pays') {
         foreach ($resBrands as $brand) {
 
             $link = "cars?id_brand=" . $brand['idBrand'];

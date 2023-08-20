@@ -3,43 +3,43 @@ const wrapper = document.querySelector(".wrapper"),
     searchInp = wrapper.querySelector("input"),
     options = wrapper.querySelector(".options");
 
-let countries = [];
+let categories = [];
 
 $.ajax({
-    url: '../../php/getCountry.php',
+    url: '../../php/getCategory.php',
     type: 'GET',
     success: function(data) {
-        countries = JSON.parse(data);
-        countries.push("Tous les pays");
+        categories = JSON.parse(data);
+        categories.push("Toutes les catégories");
 
-        var indexElement = countries.indexOf("Tous les pays");
+        var indexElement = categories.indexOf("Toutes les catégories");
 
         if (indexElement !== -1) {
-            countries.splice(indexElement, 1);
-            countries.unshift("Tous les pays");
+            categories.splice(indexElement, 1);
+            categories.unshift("Toutes les catégories");
         }
 
-        addCountry();
+        addCategory();
     }
 });
 
-function addCountry(selectedCountry) {
+function addCategory(selectedCategory) {
     options.innerHTML = "";
-    countries.forEach(country => {
-        let isSelected = country == selectedCountry ? "selected" : "";
-        let li = `<li onclick="updateName(this)" class="${isSelected}">${country}</li>`;
+    categories.forEach(category => {
+        let isSelected = category == selectedCategory ? "selected" : "";
+        let li = `<li onclick="updateName(this)" class="${isSelected}">${category}</li>`;
         options.insertAdjacentHTML("beforeend", li);
     });
 }
 
 function updateName(selectedLi) {
     searchInp.value = "";
-    addCountry(selectedLi.innerText);
+    addCategory(selectedLi.innerText);
     wrapper.classList.remove("active");
     selectBtn.firstElementChild.innerText = selectedLi.innerText;
 
     $.ajax({
-        url: '../../php/filtreCountry.php',
+        url: '../../php/filtreCategory.php',
         type: 'POST',
         data: 'request=' + selectedLi["innerHTML"],
         success: function (data) {
@@ -57,7 +57,7 @@ searchInp.addEventListener("keyup", () => {
         let isSelected = data == selectBtn.firstElementChild.innerText ? "selected" : "";
         return `<li onclick="updateName(this)" class="${isSelected}">${data}</li>`;
     }).join("");
-    options.innerHTML = arr ? arr : `<p style="margin-top: 10px;">Oups! Aucun pays trouvé</p>`;
+    options.innerHTML = arr ? arr : `<p style="margin-top: 10px;">Oups! Aucune catégorie trouvée</p>`;
 });
 
 selectBtn.addEventListener("click", () => wrapper.classList.toggle("active"));
