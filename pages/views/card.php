@@ -41,8 +41,8 @@
     function ActivityCard($link, $img, $imgFlag, $title, $cat) { ?>
         <a href="<?= $link ?>" class="card">
             <div class="card-content">
-                <div class="card-image">
-                    <img src="<?= $img ?>">
+                <div style="width: 100%; height:250px;" class="card-image">
+                    <img style="width: 100%; height:85%;" src="<?= $img ?>">
                 </div>
                 <div class="card-info-wrapper">
                     <div class="card-info">

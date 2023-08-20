@@ -125,6 +125,14 @@ header .account .input_btn {
     cursor: pointer;
 }
 
+header .account .input_btn.register {
+    color: var(--text-color);
+}
+
+header .account .input_btn.login {
+    background-color: var(--primary-color);
+}
+
 header .account .input_btn.login {
     background-color: var(--primary-color);
 }
