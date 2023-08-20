@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,1,0" />
 
     <link rel="stylesheet" href="../../style/mon_compte.css">
+    <link rel="stylesheet" href="../../../style/cardStyle.css">
     
     <link rel="stylesheet" href="../../../style/sidebarStyle.css">
 

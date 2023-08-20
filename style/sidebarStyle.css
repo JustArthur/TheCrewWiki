@@ -1,3 +1,5 @@
+@import url('defaultStyle.css');
+
 header {
     position: fixed;
 
@@ -15,14 +17,14 @@ header {
 
     padding: 40px 30px;
 
-    border-right: 1px solid #2B2E39;
+    border-right: 1px solid var(--border-color);
 
-    background: rgba(19, 19, 21, 0.01);
+    background: var(--background-color-03);
     backdrop-filter: blur(19px);
 }
 
 header .logo {
-    color: #EAF2F7;
+    color: var(--text-color);
 
     font-size: 40px;
     font-weight: 700;
@@ -33,14 +35,14 @@ header .logo {
 }
 
 .yellow {
-    color: #FFDC16;
+    color: var(--primary-color);
 }
 
 .border {
     height: 1px;
     width: 100%;
 
-    background-color: #2B2E39;
+    background-color: var(--border-color);
 
     margin-top: calc(24px - 13px);
 }
@@ -60,7 +62,7 @@ header .secondary-list {
 }
 
 header a:is(.list-item) {
-    color: #EAF2F7;
+    color: var(--text-color);
 
     font-size: 15px;
     font-weight: 300;
@@ -77,13 +79,13 @@ header .list-item.title {
 }
 
 header .secondary-list a:is(.list-item) {
-    color: #A2A9B9;
+    color: var(--text-color-gray);
     transform: translateX(20px);
 }
 
 header a:is(.list-item):hover {
     transform: translateX(10px);
-    color: #FFDC16;
+    color: var(--primary-color);
 
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -93,7 +95,7 @@ header .secondary-list a:is(.list-item):hover {
 }
 
 header .secondary-list a:is(.list-item).active {
-    color: #FFDC16;
+    color: var(--primary-color);
     transform: translateX(30px);
 }
 
@@ -108,10 +110,10 @@ header .account {
 }
 
 header .account .input_btn {
-    border: 1px solid #FFDC16;
+    border: 1px solid var(--primary-color);
     border-radius: 5px;
 
-    color: #EAF2F7;
+    color: #131315;
 
     padding: 10px 1rem;
     width: 100%;
@@ -124,12 +126,12 @@ header .account .input_btn {
 }
 
 header .account .input_btn.login {
-    background-color: #FFDC16;
-    color: #2B2E39;
+    background-color: var(--primary-color);
 }
 
 header .account .input_btn.deco {
     background-color: red;
+    color: #EAF2F7;
     border: 1px solid red;
 }
 
@@ -145,7 +147,7 @@ header .account .input_btn.deco {
         width: 100%;
 
         border-right: none;
-        border-bottom: 1px solid #2B2E39;
+        border-bottom: 1px solid var(--border-color);
 
         gap: 0;
 

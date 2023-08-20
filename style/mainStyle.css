@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('defaultStyle.css');
 
 * {
     padding: 0;
@@ -20,9 +21,9 @@ body {
     height: 100vh;
     width: 100%;
 
-    background-color: #131315;
+    background-color: var(--background-color);
 
-    color: #EAF2F7;
+    color: var(--text-color);
 }
 
 .container {
@@ -65,7 +66,7 @@ main .content {
 }
 
 main .content .title {
-    color: #EAF2F7;
+    color: var(--text-color);
 
     font-size: 50px;
     font-weight: 700;
@@ -74,7 +75,7 @@ main .content .title {
 }
 
 main .content .desc { 
-    color: #EAF2F7;
+    color: var(--text-color);
 
     font-size: 18px;
     font-weight: 400;
@@ -83,7 +84,7 @@ main .content .desc {
 }
 
 main .content .desc.big {
-    color: #A2A9B9;
+    color: var(--text-color-gray);
 
     font-size: 25px;
 }
@@ -116,9 +117,9 @@ main .content .list .list-item.box {
     width: 100%;
 
     border-radius: 5px;
-    border: 1px solid #2B2E39;
+    border: 1px solid var(--border-color);
 
-    background: #131315;
+    background: var(--background-color);
 
     display: flex;
     justify-content: space-between;
@@ -141,15 +142,15 @@ main .content .list .list-item.box:hover .textes .title,
 main .content .list .list-item.box:hover .icon,
 main .content .list .list-item.box:focus .textes .title,
 main .content .list .list-item.box:focus .icon {
-    color: #FFDC16;
+    color: var(--primary-color);
 }
 
 main .content .list .list-item.box:focus {
-    border: 1px solid #ffdc1652;
+    border: 1px solid var(--primary-color-52);
 }
 
 main .content .list .list-item .textes .info{
-    color: #A2A9B9;
+    color: var(--text-color-gray);
 
     font-size: 15px;
     font-weight: 300;
@@ -158,7 +159,7 @@ main .content .list .list-item .textes .info{
 }
 
 main .content .list .list-item .textes .title {
-    color: #EAF2F7;
+    color: var(--text-color);
 
     font-size: 15px;
     font-weight: 700;
@@ -167,7 +168,7 @@ main .content .list .list-item .textes .title {
 }
 
 main .content .list .list-item .icon {
-    color: #A2A9B9;
+    color: var(--text-color-gray);
 }
 
 

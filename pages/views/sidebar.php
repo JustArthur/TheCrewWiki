@@ -42,3 +42,4 @@
 </script>
 <script src="<?= ROOT_PATH ?>javascript/navbar.js"></script>
 <script src="<?= ROOT_PATH ?>javascript/sidebar.js"></script>
+<script src="<?= ROOT_PATH ?>javascript/changeTheme.js"></script>

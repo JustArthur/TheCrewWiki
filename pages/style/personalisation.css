@@ -1,0 +1,25 @@
+.theme-selector {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.theme-option {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+/* Thème clair */
+.light-theme {
+    background-color: white;
+    color: black;
+}
+
+/* Thème sombre */
+.dark-theme {
+    background-color: #131315;
+    color: white;
+}

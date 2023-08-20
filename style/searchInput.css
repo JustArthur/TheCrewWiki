@@ -9,7 +9,7 @@
 
     transform: translateY(-50%);
 
-    color: #EAF2F7;
+    color: var(--text-color);
 
     font-size: 20px;
 
@@ -25,15 +25,15 @@
     font-size: 17px;
 
     border-radius: 10px;
-    border: 1px solid #2B2E39;
+    border: 1px solid var(--border-color);
 
     padding: 0 20px 0 43px;
 
-    background: #131315;
+    background: var(--background-color);
 
-    color: #EAF2F7;
+    color: var(--text-color);
 }
 
 .search input:focus {
-    border: 1px solid #ffdc1652;
+    border: 1px solid var(--primary-color-52);
 }
