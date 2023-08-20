@@ -38,7 +38,7 @@
         </a>
     <?php }
 
-    function ActivityCard($link, $img, $imgFlag, $title) { ?>
+    function ActivityCard($link, $img, $imgFlag, $title, $cat) { ?>
         <a href="<?= $link ?>" class="card">
             <div class="card-content">
                 <div class="card-image">
@@ -46,9 +46,10 @@
                 </div>
                 <div class="card-info-wrapper">
                     <div class="card-info">
-                        <img src="<?= $imgFlag ?>" class="flag">
+                        <img style="width: 50px; height:50px;" src="<?= $imgFlag ?>" class="flag">
                         <div class="card-info-title">
                             <h3><?= $title ?></h3>
+                            <h4><?= $cat ?></h4>
                         </div>
                     </div>
                 </div>

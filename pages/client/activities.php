@@ -2,7 +2,7 @@
 
     include_once '../../include.php';
 
-    $resActivities = $DB->prepare('SELECT * FROM activities ORDER BY nomActivity ASC');
+    $resActivities = $DB->prepare('SELECT * FROM activities INNER JOIN categories on categories.idCategory = activities.catActivity ORDER BY activities.nomActivity ASC');
     $resActivities->execute();
     $resActivities = $resActivities->fetchAll();
 
@@ -71,11 +71,12 @@
                         foreach ($resActivities as $activity) {
 
                             $link = "activity?id_activity=" . $activity['idActivity'];
-                            $img = "../../img/brands/" . $activity['nomActivity'] . "/logo/" . $activity['imgActivity'];
-                            $imgFlag = "../../img/flags/" . $activity['imgActivity'];
+                            $img = "../../img/activities/" . $activity['nameCategory'] . "/" . $activity['imgActivity'];
+                            $imgFlag = "../../img/categories/" . $activity['flagCategory'];
                             $nomActivity = $activity['nomActivity'];
+                            $cat = $activity['nameCategory'];
                         
-                            ActivityCard($link, $img, $imgFlag, $nomActivity);
+                            ActivityCard($link, $img, $imgFlag, $nomActivity, $cat);
                         }
                         
                     ?>

@@ -42,6 +42,15 @@
 
                 <span class="material-symbols-rounded icon">arrow_forward</span>
             </a>
+
+            <a href="pages/add_activity" class="list-item box">
+                <div class="textes">
+                    <h3 class="info">The Crew 2 - Les activités</h3>
+                    <h3 class="title">Ajouter des activités dans la base de données</h3>
+                </div>
+
+                <span class="material-symbols-rounded icon">arrow_forward</span>
+            </a>
         </ul>
     </main>
 </body>

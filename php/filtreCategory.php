@@ -18,11 +18,12 @@
         foreach ($resActivities as $activity) {
 
             $link = "activity?id_activity=" . $activity['idActivity'];
-            $img = "../../img/brands/" . $activity['nomActivity'] . "/logo/" . $activity['imgActivity'];
-            $imgFlag = "../../img/flags/" . $activity['imgActivity'];
+            $img = "../../img/activities/" . $activity['nameCategory'] . "/" . $activity['imgActivity'];
+            $imgFlag = "../../img/categories/" . $activity['flagCategory'];
             $nomActivity = $activity['nomActivity'];
-        
-            ActivityCard($link, $img, $imgFlag, $nomActivity);
+            $cat = $activity['nameCategory'];
+                        
+            ActivityCard($link, $img, $imgFlag, $nomActivity, $cat);
         }
     }
 
@@ -30,11 +31,12 @@
         foreach ($resCategory as $category) {
 
             $link = "activity?id_activity=" . $category['idActivity'];
-            $img = "../../img/brands/" . $category['nomActivity'] . "/logo/" . $category['imgActivity'];
-            $imgFlag = "../../img/flags/" . $category['imgActivity'];
+            $img = "../../img/activities/" . $category['nameCategory'] . "/" . $category['imgActivity'];
+            $imgFlag = "../../img/categories/" . $category['flagCategory'];
             $nomActivity = $category['nomActivity'];
-        
-            ActivityCard($link, $img, $imgFlag, $nomActivity);
+            $cat = $category['nameCategory'];
+                        
+            ActivityCard($link, $img, $imgFlag, $nomActivity, $cat);
         }
     }
 ?>
