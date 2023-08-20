@@ -16,6 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `activities`
+--
+
+DROP TABLE IF EXISTS `activities`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `activities` (
+  `idActivitie` bigint DEFAULT NULL,
+  `nomActivitie` varchar(100) DEFAULT NULL,
+  `catActivitie` bigint DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `activities`
+--
+
+LOCK TABLES `activities` WRITE;
+/*!40000 ALTER TABLE `activities` DISABLE KEYS */;
+/*!40000 ALTER TABLE `activities` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `brands`
 --
 
@@ -65,7 +88,7 @@ CREATE TABLE `cars` (
   PRIMARY KEY (`idCar`),
   KEY `cars_FK` (`idBrand`),
   CONSTRAINT `cars_FK` FOREIGN KEY (`idBrand`) REFERENCES `brands` (`idBrand`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,8 +110,8 @@ DROP TABLE IF EXISTS `country`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `country` (
   `idCountry` bigint NOT NULL AUTO_INCREMENT,
-  `nameCountry` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `flagCountry` text COLLATE utf8mb4_general_ci,
+  `nameCountry` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `flagCountry` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   PRIMARY KEY (`idCountry`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -117,7 +140,7 @@ CREATE TABLE `user` (
   `rangUser` bigint NOT NULL,
   `emailUser` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`idUser`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,7 +149,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Kuma','$2y$10$7/JyQAo3TRV0gsP40C9fdO7KDUQysyxATZfvaAOoN3m8l1pd.6ERy',3,''),(2,'Wayz','$2y$10$TxrcngefLdDwOnncG/Cvgeb2uMyfSNiNmOdCgqFhSEVdAza4LAyNq',3,''),(3,'','$2y$10$n/shuRZspFYd.pkkEVb6cOeix3GK1AoD/YjeCOoBPWjoKUb7cdeRO',0,'maxxozou@gmail.com'),(6,'userTest','$2y$10$jpkyOxDtTbvKBQG5Dm3Sm.ePjyLDKpwWhe9XBrO/keGl/X4ff8x9u',0,'test@gmail.com'),(7,'userTest2','$2y$10$49eVXnPZIkjWpkYu41JF.OtIUv6t//VEP.7c1k8JbNQ7AfaPJxqS2',0,'arthur@gmail.com');
+INSERT INTO `user` VALUES (1,'Kuma','$2y$10$7/JyQAo3TRV0gsP40C9fdO7KDUQysyxATZfvaAOoN3m8l1pd.6ERy',3,''),(8,'wayz','$2y$10$wD6s/6Qo9cOLeoDTPto11uvcsfqjLytqCsQHnEGjeF1BYwsb6ti7m',3,'wakzy@gmail.com');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,4 +166,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-18 21:29:58
+-- Dump completed on 2023-08-20  9:24:34
