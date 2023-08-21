@@ -30,6 +30,8 @@
 
     <link rel="stylesheet" href="../../../style/mainStyle.css">
 
+    <link rel="stylesheet" href="../../style/car_info.css">
+
     <link rel="stylesheet" href="../../../style/searchInput.css">
     <link rel="stylesheet" href="../../../style/cardStyle.css">
 
