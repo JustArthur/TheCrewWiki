@@ -113,7 +113,7 @@ header .account .input_btn {
     border: 1px solid var(--primary-color);
     border-radius: 5px;
 
-    color: #131315;
+    color: var(--text-color);
 
     padding: 10px 1rem;
     width: 100%;
@@ -126,11 +126,11 @@ header .account .input_btn {
 }
 
 header .account .input_btn.register {
-    color: var(--text-color);
+    color: var(--text-color-register);
 }
 
 header .account .input_btn.login {
-    background-color: var(--primary-color);
+    color: var(--text-color-login);
 }
 
 header .account .input_btn.login {

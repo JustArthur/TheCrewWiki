@@ -1,7 +1,13 @@
+@import url('../../style/defaultStyle.css');
+
 .theme-selector {
     display: flex;
     justify-content: center;
     margin: 20px;
+}
+
+.theme-selector img {
+    border: solid 2px var(--border-color);
 }
 
 .theme-option {

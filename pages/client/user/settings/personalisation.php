@@ -25,8 +25,10 @@
     <?php include_once '../../../../pages/views/sidebar.php' ?>
 
     <div class="theme-selector">
-        <img src="icon/light_yellow.png" class="theme-option" id="theme-light" onclick="changeTheme('light')">
-        <img src="icon/dark_yellow.png" class="theme-option" id="theme-dark" onclick="changeTheme('dark')">
+        <img src="icon/light_yellow.png" class="theme-option" id="theme-light-yellow" onclick="changeTheme('light-yellow')">
+        <img src="icon/dark_yellow.png" class="theme-option" id="theme-dark-yellow" onclick="changeTheme('dark-yellow')">
+        <img src="icon/light_blue.png" class="theme-option" id="theme-light-blue" onclick="changeTheme('light-blue')">
+        <img src="icon/dark_blue.png" class="theme-option" id="theme-dark-blue" onclick="changeTheme('dark-blue')">
     </div>
 
     <div class="content">

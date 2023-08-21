@@ -5,6 +5,8 @@
     --background-color-select: #242429;
 
     --text-color: #EAF2F7;
+    --text-color-register: #EAF2F7;
+    --text-color-login: #131315;
     --text-color-gray: #A2A9B9;
 
     --border-color: #2B2E39;
@@ -27,6 +29,8 @@
     --background-color-select: #c8d3da;
 
     --text-color: #131315;
+    --text-color-register: #131315;
+    --text-color-login: #131315;
     --text-color-gray: #3a3d42;
 
     --border-color: #c4c8d6;
@@ -37,7 +41,55 @@
     --card-color-10: #0000000f;
 }
 
-.dark_yellow_theme {
+/* .dark_yellow_theme {
     background-color: var(--background-color-dark);
     color: var(--text-color-dark);
+} */
+
+.light_blue_theme {
+    --background-color: #EAF2F7;
+    --background-color-03: #EAF2F703;
+    --background-color-select: #c8d3da;
+
+    --text-color: #131315;
+    --text-color-register: #131315;
+    --text-color-login: #EAF2F7;
+    --text-color-gray: #3a3d42;
+
+    --border-color: #c4c8d6;
+
+    --card-color-100: #EAF2F7;
+    --card-color-80: #ffffff80;
+    --card-color-66: #ffffff66;
+    --card-color-10: #0000000f;
+
+
+    /* ---- [ Primary Color ] ---- */
+    --primary-color: #2034ff;
+    --primary-color-52: #2034ff52;
+}
+
+.dark_blue_theme {
+    /* ---- [ Default Theme ( Dark / Yellow Colors ] ---- */
+    --background-color: #131315;
+    --background-color-03: #13131503;
+    --background-color-select: #242429;
+
+    --text-color: #EAF2F7;
+    --text-color-register: #EAF2F7;
+    --text-color-login: #EAF2F7;
+    --text-color-gray: #A2A9B9;
+
+    --border-color: #2B2E39;
+
+    --card-color-100: #131315;
+    --card-color-80: #ffffff0f;
+    --card-color-66: #ffffff11;
+    --card-color-10: #ffffff0f;
+
+
+
+    /* ---- [ Primary Color ] ---- */
+    --primary-color: #2034ff;
+    --primary-color-52: #2034ff52;
 }
