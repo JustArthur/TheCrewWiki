@@ -23,10 +23,14 @@ DROP TABLE IF EXISTS `activities`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `activities` (
-  `idActivitie` bigint DEFAULT NULL,
-  `nomActivitie` varchar(100) DEFAULT NULL,
-  `catActivitie` bigint DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `idActivity` bigint NOT NULL AUTO_INCREMENT,
+  `nomActivity` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `catActivity` bigint DEFAULT NULL,
+  `imgActivity` text,
+  PRIMARY KEY (`idActivity`),
+  KEY `activities_FK` (`catActivity`),
+  CONSTRAINT `activities_FK` FOREIGN KEY (`catActivity`) REFERENCES `categories` (`idCategory`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,6 +39,7 @@ CREATE TABLE `activities` (
 
 LOCK TABLES `activities` WRITE;
 /*!40000 ALTER TABLE `activities` DISABLE KEYS */;
+INSERT INTO `activities` VALUES (1,'New York',11,'newyork.jpg');
 /*!40000 ALTER TABLE `activities` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,6 +107,31 @@ INSERT INTO `cars` VALUES (1,'Bugatti Chiron',2017,'TC2BugattiChiron.webp',0,0,0
 UNLOCK TABLES;
 
 --
+-- Table structure for table `categories`
+--
+
+DROP TABLE IF EXISTS `categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `categories` (
+  `idCategory` bigint NOT NULL AUTO_INCREMENT,
+  `nameCategory` varchar(100) DEFAULT NULL,
+  `flagCategory` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  PRIMARY KEY (`idCategory`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categories`
+--
+
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'PowerBoat','pb.png'),(2,'Touring Car','tc.png'),(3,'Air Race','ar.png'),(4,'Alpha GP','a.png'),(5,'Rally Raid','rr.png'),(6,'Rally Cross','rx.png'),(7,'Motocross','mx.png'),(8,'Street Race','sr.png'),(9,'Drifting','df.png'),(10,'Drag Race','dr.png'),(11,'Hypercar','hc.png'),(12,'Aerobatics','ab.png'),(13,'Hover Craft','ht.png'),(14,'Monter Truck','mt.png'),(15,'Jetsprint','js.png'),(16,'Demolition Derby','dd.png');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `country`
 --
 
@@ -166,4 +196,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-20  9:24:34
+-- Dump completed on 2023-08-22 10:06:18
