@@ -9,80 +9,39 @@
 
     $nomActivityForm = $_POST['request'];
 
-    $selectAllActivitiesFromCategory = $DB->prepare("SELECT * FROM activities INNER JOIN categories ON categories.idCategory = activities.catActivity WHERE activities.idCategory = ? ORDER BY nomActivity ASC");
+    $selectAllActivitiesFromCategory = $DB->prepare("SELECT * FROM activities INNER JOIN categories on categories.idCategory = activities.catActivity ORDER BY activities.nomActivity ASC");
     $selectAllActivitiesFromCategory->execute([$_POST['id_brand']]);
     $selectAllActivitiesFromCategory = $selectAllActivitiesFromCategory->fetchAll();
 
-    $resBrands = $DB->prepare('SELECT * FROM brands INNER JOIN country ON country.idCountry = brands.idCountry WHERE idBrand = ?');
-    $resBrands->execute([$_POST['id_brand']]);
-    $resBrands = $resBrands->fetch();
+    // $resBrands = $DB->prepare('SELECT * FROM brands INNER JOIN country ON country.idCountry = brands.idCountry WHERE idBrand = ?');
+    // $resBrands->execute([$_POST['id_brand']]);
+    // $resBrands = $resBrands->fetch();
 
-    $resBrandsSearch = $DB->prepare("SELECT * FROM cars INNER JOIN brands ON cars.idBrand = brands.idBrand WHERE brands.idBrand = ? AND cars.nomCar LIKE ?");
-    $resBrandsSearch->execute([$_POST['id_brand'], '%' . $nomActivityForm . '%']);
+    $resActivitiesSearch = $DB->prepare("SELECT * FROM activities INNER JOIN categories ON activities.catActivity = categories.idCategory WHERE activities.nomActivity LIKE ?");
+    $resActivitiesSearch->execute(['%' . $nomActivityForm . '%']);
 
     if (empty($_POST['request'])) {
-        foreach ($selectAllCarsFromBrand as $car) {
+        foreach ($selectAllActivitiesFromCategory as $activity) {
 
-            $summit = $car['summitReward'] == 1 ? 'summit' : '';
-            $text_summit = $summit ? "<h4>Voiture d'un Summit</h4>" : "<h4 style='display: none'></h4>";
-
-            $battlepass = $car['battlepassReward'] == 1 ? 'battlePass' : '';
-            $text_battlepass = $battlepass ? "<h4>Voiture d'un Motorpass</h4>" : "<h4 style='display: none'></h4>";
-
-            $icon = $car['iconReward'] != 0 ? "icon" : '';
-            $text_icon = $icon ? "<h4>Voiture de l'icone {$car['iconReward']}</h4>" : "<h4 style='display: none'></h4>";
-
-            $buckPrice = $car['buckPrice'] != 0 ? number_format($car['buckPrice'], 0, ',', ' ') : '';
-            $crewCreditPrice = $car['crewCreditPrice'] != 0 ? number_format($car['crewCreditPrice'], 0, ',', ' ') : '';
-
-            $text_price = '';
-
-            if ($buckPrice != '' && $crewCreditPrice != '') {
-                $text_price = "<h4>{$buckPrice} | {$crewCreditPrice}</h4>";
-            } else {
-                $text_price = "<h4 style='display: none'></h4>";
-            }
-
-            $link = "pages/car_info?id_car=" . $car['idCar'];
-            $img = "../../img/brands/" . $car['nomBrand'] . "/cars/" . $car['imgCar'];
-            $imgFlag = "../../img/flags/" . $resBrands['flagCountry'];
-            $title = $car['nomCar'];
-            if ($car['anneeBrand'] != 0) { $date = $car['anneeBrand']; } else { $date = '?'; }
-
-            carCard($link, $img, $imgFlag, $title, $date, $summit, $battlepass, $icon, $text_summit, $text_battlepass, $text_icon, $text_price);
+            $link = "activity?id_activity=" . $activity['idActivity'];
+            $img = "../../img/activities/" . $activity['nameCategory'] . "/" . $activity['imgActivity'];
+            $imgFlag = "../../img/categories/" . $activity['flagCategory'];
+            $nomActivity = $activity['nomActivity'];
+            $cat = $activity['nameCategory'];
+                        
+            ActivityCard($link, $img, $imgFlag, $nomActivity, $cat);
 
         }
     } else {
-        foreach ($resBrandsSearch as $car) {
+        foreach ($resActivitiesSearch as $car) {
 
-            $summit = $car['summitReward'] == 1 ? 'summit' : '';
-            $text_summit = $summit ? "<h4>Voiture d'un Summit</h4>" : "<h4 style='display: none'></h4>";
-
-            $battlepass = $car['battlepassReward'] == 1 ? 'battlePass' : '';
-            $text_battlepass = $battlepass ? "<h4>Voiture d'un Motorpass</h4>" : "<h4 style='display: none'></h4>";
-
-            $icon = $car['iconReward'] != 0 ? "icon" : '';
-            $text_icon = $icon ? "<h4>Voiture de l'icone {$car['iconReward']}</h4>" : "<h4 style='display: none'></h4>";
-
-            $buckPrice = $car['buckPrice'] != 0 ? number_format($car['buckPrice'], 0, ',', ' ') : '';
-            $crewCreditPrice = $car['crewCreditPrice'] != 0 ? number_format($car['crewCreditPrice'], 0, ',', ' ') : '';
-
-            $text_price = '';
-
-            if ($buckPrice != '' && $crewCreditPrice != '') {
-                $text_price = "<h4>{$buckPrice} | {$crewCreditPrice}</h4>";
-            } else {
-                $text_price = "<h4 style='display: none'></h4>";
-            }
-
-            $link = "pages/car_info?id_car=" . $car['idCar'];
-            $img = "../../img/brands/" . $car['nomBrand'] . "/cars/" . $car['imgCar'];
-            $imgFlag = "../../img/flags/" . $resBrands['flagCountry'];
-            $title = $car['nomCar'];
-            if ($car['anneeBrand'] != 0) { $date = $car['anneeBrand']; } else { $date = '?'; }
-
-            carCard($link, $img, $imgFlag, $title, $date, $summit, $battlepass, $icon, $text_summit, $text_battlepass, $text_icon, $text_price);
+            $link = "activity?id_activity=" . $car['idActivity'];
+            $img = "../../img/activities/" . $car['nameCategory'] . "/" . $car['imgActivity'];
+            $imgFlag = "../../img/categories/" . $car['flagCategory'];
+            $nomActivity = $car['nomActivity'];
+            $cat = $car['nameCategory'];
+                        
+            ActivityCard($link, $img, $imgFlag, $nomActivity, $cat);
 
         }
     }
-?>
