@@ -99,7 +99,7 @@
 
     <script src="../../javascript/overCardEffect.js"></script>
     <script src="../../javascript/searchCountrySelect.js"></script>
-    <script src="../../javascript/searchCountry.js"></script>
+    <script src="../../javascript/searchBrands.js"></script>
 </body>
 
 </html>

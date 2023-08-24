@@ -39,7 +39,7 @@
                 <p class="desc big">Liste de toutes les activités présentes en jeu.</p>
 
 
-                <form id="formulaire" action="" class="search_form">
+                <form id="formulaire" action="" class="search_form_act">
                     <div class="search">
                         <i class="uil uil-search"></i>
                         <input spellcheck="false" type="text" placeholder="Rechercher une activité">
@@ -47,7 +47,7 @@
                 </form>
 
 
-                <form action="">
+                <form action="" class="search_form_cat">
                     <div class="wrapper">
                         <div class="select-btn">
                             <span>Sélectionner une catégorie</span>
@@ -98,7 +98,6 @@
 
     <script src="../../javascript/overCardEffect.js"></script>
     <script src="../../javascript/searchCategorySelect.js"></script>
-    <script src="../../javascript/searchCategory.js"></script>
     <script src="../../javascript/searchActivities.js"></script>
 
 </body>

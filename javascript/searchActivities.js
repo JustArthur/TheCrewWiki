@@ -1,14 +1,13 @@
-const form = document.querySelector(".search_form"),
-    searchInput = form.querySelector("input");
+const form_act = document.querySelector(".search_form_act"),
+    searchInput_act = form_act.querySelector("input");
 
-searchInput.addEventListener("keyup", () => {
-    let searchWord = searchInput.value.toLowerCase();
-    var ActivityId = searchInput.id
+searchInput_act.addEventListener("keyup", () => {
+    let searchWord = searchInput_act.value.toLowerCase();
 
     $.ajax({
         url: '../../php/getActivities.php',
         type: 'POST',
-        data: 'request=' + searchWord + '&id_brand=' + ActivityId,
+        data: 'request=' + searchWord,
         success: function (data) {
             $(".list-card").html(data);
         }

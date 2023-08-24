@@ -10,12 +10,8 @@
     $nomActivityForm = $_POST['request'];
 
     $selectAllActivitiesFromCategory = $DB->prepare("SELECT * FROM activities INNER JOIN categories on categories.idCategory = activities.catActivity ORDER BY activities.nomActivity ASC");
-    $selectAllActivitiesFromCategory->execute([$_POST['id_brand']]);
+    $selectAllActivitiesFromCategory->execute();
     $selectAllActivitiesFromCategory = $selectAllActivitiesFromCategory->fetchAll();
-
-    // $resBrands = $DB->prepare('SELECT * FROM brands INNER JOIN country ON country.idCountry = brands.idCountry WHERE idBrand = ?');
-    // $resBrands->execute([$_POST['id_brand']]);
-    // $resBrands = $resBrands->fetch();
 
     $resActivitiesSearch = $DB->prepare("SELECT * FROM activities INNER JOIN categories ON activities.catActivity = categories.idCategory WHERE activities.nomActivity LIKE ?");
     $resActivitiesSearch->execute(['%' . $nomActivityForm . '%']);
