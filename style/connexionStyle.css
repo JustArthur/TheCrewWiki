@@ -23,7 +23,7 @@ body {
 
     background-color: #131315;
 
-    color: #EAF2F7;
+    color: var(--text-color);
 }
 
 .container {
@@ -68,21 +68,21 @@ form input {
     font-size: 17px;
 
     border-radius: 5px;
-    border: 1px solid #2B2E39;
+    border: 1px solid var(--border-color);
 
     padding: 0 20px 0 15px;
 
     background: #131315;
 
-    color: #EAF2F7;
+    color: var(--text-color);
 }
 
 form input:focus {
-    border: 1px solid #FFDC16;
+    border: 1px solid var(--primary-color);
 }
 
 form input[type="submit"] {
-    background-color: #FFDC16;
+    background-color: var(--primary-color);
 
     color: #131315;
 
@@ -90,7 +90,7 @@ form input[type="submit"] {
 }
 
 main a {
-    color: #FFDC16;
+    color: var(--primary-color);
     text-decoration: underline;
 }
 
@@ -105,5 +105,5 @@ main a {
 }
 
 .info_pass .icon {
-    color: #FFDC16;
+    color: var(--primary-color);
 }
