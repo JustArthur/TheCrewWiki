@@ -48,6 +48,26 @@ if (empty($_SESSION['utilisateur'])) {
                     <div class="left_circle"></div>
                     <div class="right_circle"></div>
                 </div>
+
+                <div class="theme-option" id="theme-light-pink" onclick="changeTheme('light-pink')">
+                    <div class="left_circle"></div>
+                    <div class="right_circle"></div>
+                </div>
+
+                <div class="theme-option" id="theme-dark-pink" onclick="changeTheme('dark-pink')">
+                    <div class="left_circle"></div>
+                    <div class="right_circle"></div>
+                </div>
+
+                <div class="theme-option" id="theme-light-orange" onclick="changeTheme('light-orange')">
+                    <div class="left_circle"></div>
+                    <div class="right_circle"></div>
+                </div>
+
+                <div class="theme-option" id="theme-dark-orange" onclick="changeTheme('dark-orange')">
+                    <div class="left_circle"></div>
+                    <div class="right_circle"></div>
+                </div>
             </div>
         </div>
     </main>

@@ -17,50 +17,24 @@
 }
 
 body {
-    height: 100vh;
-    width: 100%;
-
-    background-color: var(--background-color);
-
-    color: var(--text-color);
-
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-}
-
-main {
+    background-color: var(--background-color);
+    color: var(--text-color);
     position: relative;
-    left: 311px;
-
     min-height: 100vh;
-    width: 100%;
-    max-width: calc(100% - 311px);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 45px 2rem;
-}
-
-/* body {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    position: relative;
 }
 
 main {
-    margin: 0 auto;
     margin-left: 311px;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: calc(100% - 311px);
+    align-items: center;
     min-height: 100vh;
     padding: 1rem;
-} */
+}
 
 :root {
     /* ---- [ Default Theme ( Dark / Yellow Colors ] ---- */
@@ -83,8 +57,8 @@ main {
 
 
     /* ---- [ Primary Color ] ---- */
-    --primary-color: #FFDC16;
-    --primary-color-52: #ffdc1652;
+    --primary-color: #ffd816;
+    --primary-color-52: #ffd81652;
 }
 
 .light_yellow_theme {
@@ -105,11 +79,59 @@ main {
     --card-color-10: #0000000f;
 
     /* ---- [ Primary Color ] ---- */
-    --primary-color: #FFDC16;
-    --primary-color-52: #ffdc1652;
+    --primary-color: #ffd816;
+    --primary-color-52: #ffd81652;
 }
 
 .light_blue_theme {
+    --background-color: #EAF2F7;
+    --background-color-03: #EAF2F703;
+    --background-color-select: #c8d3da;
+
+    --text-color: #131315;
+    --text-color-register: #131315;
+    --text-color-login: #131315;
+    --text-color-gray: #3a3d42;
+
+    --border-color: #c4c8d6;
+
+    --card-color-100: #EAF2F7;
+    --card-color-80: #ffffff80;
+    --card-color-66: #ffffff66;
+    --card-color-10: #0000000f;
+
+
+    /* ---- [ Primary Color ] ---- */
+    --primary-color: #00cbf7;
+    --primary-color-52: #00cbf752;
+}
+
+.dark_blue_theme {
+    /* ---- [ Default Theme ( Dark / Yellow Colors ] ---- */
+    --background-color: #131315;
+    --background-color-03: #13131503;
+    --background-color-select: #242429;
+
+    --text-color: #EAF2F7;
+    --text-color-register: #EAF2F7;
+    --text-color-login: #131315;
+    --text-color-gray: #A2A9B9;
+
+    --border-color: #2B2E39;
+
+    --card-color-100: #131315;
+    --card-color-80: #ffffff0f;
+    --card-color-66: #ffffff11;
+    --card-color-10: #ffffff0f;
+
+
+
+    /* ---- [ Primary Color ] ---- */
+    --primary-color: #00cbf7;
+    --primary-color-52: #00cbf752;
+}
+
+.light_pink_theme {
     --background-color: #EAF2F7;
     --background-color-03: #EAF2F703;
     --background-color-select: #c8d3da;
@@ -128,11 +150,11 @@ main {
 
 
     /* ---- [ Primary Color ] ---- */
-    --primary-color: #2034ff;
-    --primary-color-52: #2034ff52;
+    --primary-color: #fd135a;
+    --primary-color-52: #fd135a52;
 }
 
-.dark_blue_theme {
+.dark_pink_theme {
     /* ---- [ Default Theme ( Dark / Yellow Colors ] ---- */
     --background-color: #131315;
     --background-color-03: #13131503;
@@ -153,21 +175,62 @@ main {
 
 
     /* ---- [ Primary Color ] ---- */
-    --primary-color: #2034ff;
-    --primary-color-52: #2034ff52;
+    --primary-color: #fd135a;
+    --primary-color-52: #fd135a52;
+}
+
+.light_orange_theme {
+    --background-color: #EAF2F7;
+    --background-color-03: #EAF2F703;
+    --background-color-select: #c8d3da;
+
+    --text-color: #131315;
+    --text-color-register: #131315;
+    --text-color-login: #131315;
+    --text-color-gray: #3a3d42;
+
+    --border-color: #c4c8d6;
+
+    --card-color-100: #EAF2F7;
+    --card-color-80: #ffffff80;
+    --card-color-66: #ffffff66;
+    --card-color-10: #0000000f;
+
+
+    /* ---- [ Primary Color ] ---- */
+    --primary-color: #fd8218;
+    --primary-color-52: #fd821852;
+}
+
+.dark_orange_theme {
+    /* ---- [ Default Theme ( Dark / Yellow Colors ] ---- */
+    --background-color: #131315;
+    --background-color-03: #13131503;
+    --background-color-select: #242429;
+
+    --text-color: #EAF2F7;
+    --text-color-register: #EAF2F7;
+    --text-color-login: #131315;
+    --text-color-gray: #A2A9B9;
+
+    --border-color: #2B2E39;
+
+    --card-color-100: #131315;
+    --card-color-80: #ffffff0f;
+    --card-color-66: #ffffff11;
+    --card-color-10: #ffffff0f;
+
+
+
+    /* ---- [ Primary Color ] ---- */
+    --primary-color: #fd8218;
+    --primary-color-52: #fd821852;
 }
 
 @media screen and (max-width: 830px) {
     main {
-        top: 80px;
-        left: 0;
-        max-width: 95vw;
-
-        padding: 45px 0.5rem;
-    }
-
-    /* main {
         margin: 80px auto 0;
         padding: 45px 0.5rem;
-    } */
+        width: 100%;
+    }
 }

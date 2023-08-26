@@ -26,18 +26,26 @@
     width: 100%;
 }
 
-#theme-light-yellow .right_circle, #theme-light-blue .right_circle {
+#theme-light-yellow .right_circle, #theme-light-blue .right_circle, #theme-light-pink .right_circle, #theme-light-orange .right_circle {
     background-color: #EAF2F7;
 }
 
-#theme-dark-blue .right_circle, #theme-dark-yellow .right_circle {
+#theme-dark-blue .right_circle, #theme-dark-yellow .right_circle, #theme-dark-pink .right_circle, #theme-dark-orange .right_circle {
     background-color: #131315;
 }
 
 #theme-light-yellow .left_circle, #theme-dark-yellow .left_circle {
-    background-color: #FFDC16;
+    background-color: #ffd816;
 }
 
-#theme-dark-blue .left_circle, #theme-light-blue .left_circle {
-    background-color: #2034ff;
+#theme-light-blue .left_circle, #theme-dark-blue .left_circle {
+    background-color: #00cbf7;
+}
+
+#theme-light-pink .left_circle, #theme-dark-pink .left_circle {
+    background-color: #fd135a;
+}
+
+#theme-light-orange .left_circle, #theme-dark-orange .left_circle {
+    background-color: #fd8218;
 }
