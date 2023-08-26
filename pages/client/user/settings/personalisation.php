@@ -1,16 +1,17 @@
 <?php
 
-    include_once '../../../../include.php';
+include_once '../../../../include.php';
 
-    if(empty($_SESSION['utilisateur'])) {
-        header('Location: ' . ROOT_PATH);
-        exit();
-    }
+if (empty($_SESSION['utilisateur'])) {
+    header('Location: ' . ROOT_PATH);
+    exit();
+}
 
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,18 +22,35 @@
 
     <title>TheWikiCrew | Personnalisation du compte</title>
 </head>
+
 <body>
     <?php include_once '../../../../pages/views/sidebar.php' ?>
 
-    <div class="theme-selector">
-        <img src="icon/light_yellow.png" class="theme-option" id="theme-light-yellow" onclick="changeTheme('light-yellow')">
-        <img src="icon/dark_yellow.png" class="theme-option" id="theme-dark-yellow" onclick="changeTheme('dark-yellow')">
-        <img src="icon/light_blue.png" class="theme-option" id="theme-light-blue" onclick="changeTheme('light-blue')">
-        <img src="icon/dark_blue.png" class="theme-option" id="theme-dark-blue" onclick="changeTheme('dark-blue')">
-    </div>
+    <main>
+        <div class="content">
+            <div class="theme-selector">
+                <div class="theme-option" id="theme-light-yellow" onclick="changeTheme('light-yellow')">
+                    <div class="left_circle"></div>
+                    <div class="right_circle"></div>
+                </div>
 
-    <div class="content">
-        
-    </div>
+                <div class="theme-option" id="theme-dark-yellow" onclick="changeTheme('dark-yellow')">
+                    <div class="left_circle"></div>
+                    <div class="right_circle"></div>
+                </div>
+
+                <div class="theme-option" id="theme-light-blue" onclick="changeTheme('light-blue')">
+                    <div class="left_circle"></div>
+                    <div class="right_circle"></div>
+                </div>
+
+                <div class="theme-option" id="theme-dark-blue" onclick="changeTheme('dark-blue')">
+                    <div class="left_circle"></div>
+                    <div class="right_circle"></div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>

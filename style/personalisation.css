@@ -2,30 +2,42 @@
 
 .theme-selector {
     display: flex;
+    flex-wrap: wrap;
+    max-width: 280px;
     justify-content: center;
-    margin: 20px;
+    border: solid 1px var(--border-color);
+    border-radius: 10px;
+    gap: 20px;
+    padding: 20px;
 }
 
-.theme-selector img {
+.theme-selector .theme-option {
     border: solid 2px var(--border-color);
-}
-
-.theme-option {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 0 10px;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
+    border-radius: 100%;
+    display: flex;
+    overflow: hidden;
+    transform: rotate(-45deg);
 }
 
-/* Thème clair */
-.light-theme {
-    background-color: white;
-    color: black;
+.theme-selector .theme-option .left_circle, .theme-selector .theme-option .right_circle {
+    width: 100%;
 }
 
-/* Thème sombre */
-.dark-theme {
+#theme-light-yellow .right_circle, #theme-light-blue .right_circle {
+    background-color: #EAF2F7;
+}
+
+#theme-dark-blue .right_circle, #theme-dark-yellow .right_circle {
     background-color: #131315;
-    color: white;
+}
+
+#theme-light-yellow .left_circle, #theme-dark-yellow .left_circle {
+    background-color: #FFDC16;
+}
+
+#theme-dark-blue .left_circle, #theme-light-blue .left_circle {
+    background-color: #2034ff;
 }

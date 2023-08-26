@@ -25,7 +25,7 @@
 
             <p class="desc big">Plongez dans l'univers passionnant de The Crew grâce à notre wiki complet dédié à cette licence captivante.</p>
 
-            <img src="img/The-Crew-2-157498117.jpg" alt="">
+            <img class="home_img" src="img/The-Crew-2-157498117.jpg" alt="">
 
             <p class="desc">Bienvenue dans le monde palpitant et infini de The Crew 2 ! Plongez vous dans un univers où la vitesse, la compétition et l'exploration fusionnent pour créer une expérience de jeu unique en son genre. Préparez vous à découvrir les détails les plus captivants, les astuces les plus pointues et les stratégies les plus efficaces pour exceller dans ce monde ouvert plein d'opportunités. Accrochez vous bien, car l'aventure débute ici !</p>
 

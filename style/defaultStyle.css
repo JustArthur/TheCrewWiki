@@ -43,6 +43,25 @@ main {
     padding: 45px 2rem;
 }
 
+/* body {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+}
+
+main {
+    margin: 0 auto;
+    margin-left: 311px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    padding: 1rem;
+} */
+
 :root {
     /* ---- [ Default Theme ( Dark / Yellow Colors ] ---- */
     --background-color: #131315;
@@ -89,11 +108,6 @@ main {
     --primary-color: #FFDC16;
     --primary-color-52: #ffdc1652;
 }
-
-/* .dark_yellow_theme {
-    background-color: var(--background-color-dark);
-    color: var(--text-color-dark);
-} */
 
 .light_blue_theme {
     --background-color: #EAF2F7;
@@ -145,11 +159,15 @@ main {
 
 @media screen and (max-width: 830px) {
     main {
-        left: 0;
         top: 80px;
-
-        max-width: 100%;
+        left: 0;
+        max-width: 95vw;
 
         padding: 45px 0.5rem;
     }
+
+    /* main {
+        margin: 80px auto 0;
+        padding: 45px 0.5rem;
+    } */
 }
