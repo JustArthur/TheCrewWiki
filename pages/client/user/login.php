@@ -1,21 +1,21 @@
 <?php
-    include_once '../../../include.php';
+include_once '../../../include.php';
 
-    if(!empty($_SESSION['utilisateur'])) {
-        header('Location: ../../../index');
-        exit();
+if (!empty($_SESSION['utilisateur'])) {
+    header('Location: ../../../index');
+    exit();
+}
+
+$email = '';
+$erreur = '';
+
+
+if (!empty($_POST)) {
+    extract($_POST);
+    if (isset($_POST['connexion'])) {
+        [$erreur, $email] = $_CONNEXION->connexion_user($email, $password);
     }
-
-    $email = '';
-    $erreur = '';
-
-
-    if(!empty($_POST)) {
-        extract($_POST);
-        if(isset($_POST['connexion'])) {
-            [$erreur, $email] = $_CONNEXION->connexion_user($email, $password);
-        }
-    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,30 +27,26 @@
 
     <link rel="stylesheet" href="../../../style/connexionStyle.css">
 
-    <title>Document</title>
+    <title>TheWikiCrew | Se connecter</title>
 </head>
 
 <body>
-    <div class="container">
 
-        <main>
-            <div class="content">
-                <form method="POST">
-                    <h1>Se connecter</h1>
+    <form method="POST">
+        <h1>Se connecter</h1>
 
-                    <?php if(isset($erreur)) { ?><p style="color: red;" class="erreur"><?= $erreur ?></p> <?php } ?>
+        <?php if (isset($erreur)) { ?><p style="color: red;" class="erreur"><?= $erreur ?></p> <?php } ?>
 
-                    <input required type="text" value="<?= $email ?>" name="email" placeholder="Votre adresse-mail">
-                    <input required type="password" name="password" placeholder="Votre mot de passe">
+        <input required type="text" value="<?= $email ?>" name="email" placeholder="Votre adresse-mail">
+        <input required type="password" name="password" placeholder="Votre mot de passe">
 
-                    <input type="submit" name="connexion" value="Connexion à mon compte">
+        <input type="submit" name="connexion" value="Connexion à mon compte">
 
-                    <p>Vous n'avez pas de compte ? <a href="register">Créer un compte</a></p>
-                </form>
-            </div>
-        </main>
+        <p>Vous n'avez pas de compte ? <a href="register">Créer un compte</a></p>
+    </form>
 
-    </div>
+    <script src="<?= ROOT_PATH ?>javascript/changeTheme.js"></script>
+
 </body>
 
 </html>

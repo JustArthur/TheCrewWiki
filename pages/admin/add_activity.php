@@ -1,57 +1,58 @@
 <?php
-    include_once '../../include.php';
+include_once '../../include.php';
 
-    $selecCategories = $DB->prepare('SELECT * FROM categories ORDER BY nameCategory ASC');
-    $selecCategories->execute();
-    $selecCategories = $selecCategories->fetchAll();
+$selecCategories = $DB->prepare('SELECT * FROM categories ORDER BY nameCategory ASC');
+$selecCategories->execute();
+$selecCategories = $selecCategories->fetchAll();
 
-    $valid = true;
+$valid = true;
 
-    if (!empty($_POST)) {
-        extract($_POST);
+if (!empty($_POST)) {
+    extract($_POST);
 
-        if (isset($_POST['addActivity'])) {
+    if (isset($_POST['addActivity'])) {
 
-            if (isset($_FILES['imgActivity']) && !empty($_FILES['imgActivity'])) {
-                $extensionValides = array('jpg', 'png', 'jpeg', 'webp');
+        if (isset($_FILES['imgActivity']) && !empty($_FILES['imgActivity'])) {
+            $extensionValides = array('jpg', 'png', 'jpeg', 'webp');
 
-                $upload_Activity = strtolower(substr(strrchr($_FILES['imgActivity']['name'], '.'), 1));
+            $upload_Activity = strtolower(substr(strrchr($_FILES['imgActivity']['name'], '.'), 1));
 
-                if (in_array($upload_Activity, $extensionValides)) {
+            if (in_array($upload_Activity, $extensionValides)) {
 
-                    $activityName = $DB->prepare('SELECT nameCategory FROM categories WHERE idCategory = ?');
-                    $activityName->execute([$category]);
-                    $activityName = $activityName->fetch();
+                $activityName = $DB->prepare('SELECT nameCategory FROM categories WHERE idCategory = ?');
+                $activityName->execute([$category]);
+                $activityName = $activityName->fetch();
 
-                    $dossierCategory = '../../../img/activities/' . $activityName['nameCategory'];
+                $dossierCategory = '../../../img/activities/' . $activityName['nameCategory'];
 
-                    if(!is_dir($dossierCategory)) { mkdir($dossierCategory); }
+                if (!is_dir($dossierCategory)) {
+                    mkdir($dossierCategory);
+                }
 
-                    $chemin_imgActivity = $dossierCategory . '/' . $_FILES['imgActivity']['name'];
+                $chemin_imgActivity = $dossierCategory . '/' . $_FILES['imgActivity']['name'];
 
-                    $res_Activity = move_uploaded_file($_FILES['imgActivity']['tmp_name'], $chemin_imgActivity);
+                $res_Activity = move_uploaded_file($_FILES['imgActivity']['tmp_name'], $chemin_imgActivity);
 
-                    if (is_readable($chemin_imgActivity)) {
-                        $valid = true;
-                    } else {
-                        $valid = false;
-                    }
-
+                if (is_readable($chemin_imgActivity)) {
+                    $valid = true;
                 } else {
                     $valid = false;
-                    echo 'Mauvais format de fichier';
                 }
             } else {
                 $valid = false;
-                echo 'Image brand pas mis';
+                echo 'Mauvais format de fichier';
             }
+        } else {
+            $valid = false;
+            echo 'Image brand pas mis';
+        }
 
-            if ($valid) {
-                $insertBDD = $DB->prepare("INSERT INTO activities (nomActivity, catActivity, imgActivity) VALUES(?, ?, ?);");
-                $insertBDD->execute([$nomActivity, $category, $_FILES['imgActivity']['name']]);
-            }
+        if ($valid) {
+            $insertBDD = $DB->prepare("INSERT INTO activities (nomActivity, catActivity, imgActivity) VALUES(?, ?, ?);");
+            $insertBDD->execute([$nomActivity, $category, $_FILES['imgActivity']['name']]);
         }
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -65,28 +66,26 @@
 
     <link rel="stylesheet" href="style/panel.css">
 
-    <title>Admin | Activités</title>
+    <title>TheWikiCrew | Ajouter une activité</title>
 </head>
 
 <body>
-    <main>
-        <form method="POST" enctype="multipart/form-data">
-            <h1>Ajouter une activité</h1>
-            <input type="text" autofocus name="nomActivity" placeholder="Nom de l'activité">
+    <form method="POST" enctype="multipart/form-data">
+        <h1>Ajouter une activité</h1>
+        <input type="text" autofocus name="nomActivity" placeholder="Nom de l'activité">
 
-            <select name="category">
-                <option value="none" hidden>Choisir la catégorie</option>
-                <?php foreach ($selecCategories as $category) { ?>
-                    <option value="<?= $category['idCategory'] ?>"><?= $category['nameCategory'] ?></option>
-                <?php } ?>
-            </select>
+        <select name="category">
+            <option value="none" hidden>Choisir la catégorie</option>
+            <?php foreach ($selecCategories as $category) { ?>
+                <option value="<?= $category['idCategory'] ?>"><?= $category['nameCategory'] ?></option>
+            <?php } ?>
+        </select>
 
-            <input type="file" id="image" name="imgActivity">
-            <img id="img" src="img/no-image-selected.png" alt="No image selected" class="no_image">
+        <input type="file" id="image" name="imgActivity">
+        <img id="img" src="img/no-image-selected.png" alt="No image selected" class="no_image">
 
-            <input type="submit" class="submit_btn" name="addActivity" value="Ajouter la voiture">
-        </form>
-    </main>
+        <input type="submit" class="submit_btn" name="addActivity" value="Ajouter la voiture">
+    </form>
 
     <script>
         function toggleInputs() {
@@ -138,6 +137,8 @@
             });
         });
     </script>
+
+    <script src="../../javascript/changeTheme.js"></script>
 </body>
 
 </html>

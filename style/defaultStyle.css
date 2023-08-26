@@ -1,3 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+    list-style: none;
+
+    text-decoration: none;
+
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+
+    user-select: none;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+
+    background-color: var(--background-color);
+
+    color: var(--text-color);
+
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    position: relative;
+    left: 311px;
+
+    min-height: 100vh;
+    width: 100%;
+    max-width: calc(100% - 311px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 45px 2rem;
+}
+
 :root {
     /* ---- [ Default Theme ( Dark / Yellow Colors ] ---- */
     --background-color: #131315;
@@ -39,6 +84,10 @@
     --card-color-80: #ffffff80;
     --card-color-66: #ffffff66;
     --card-color-10: #0000000f;
+
+    /* ---- [ Primary Color ] ---- */
+    --primary-color: #FFDC16;
+    --primary-color-52: #ffdc1652;
 }
 
 /* .dark_yellow_theme {
@@ -92,4 +141,15 @@
     /* ---- [ Primary Color ] ---- */
     --primary-color: #2034ff;
     --primary-color-52: #2034ff52;
+}
+
+@media screen and (max-width: 830px) {
+    main {
+        left: 0;
+        top: 80px;
+
+        max-width: 100%;
+
+        padding: 45px 0.5rem;
+    }
 }

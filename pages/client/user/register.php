@@ -1,21 +1,21 @@
 <?php
-    include_once '../../../include.php';
+include_once '../../../include.php';
 
-    if(!empty($_SESSION['utilisateur'])) {
-        header('Location: ../../../index');
-        exit();
+if (!empty($_SESSION['utilisateur'])) {
+    header('Location: ../../../index');
+    exit();
+}
+
+$identifiant = '';
+$email = '';
+$erreur = '';
+
+if (!empty($_POST)) {
+    extract($_POST);
+    if (isset($_POST['inscription'])) {
+        [$erreur, $identifiant, $email] = $_INSCRIPTION->inscription_user($identifiant, $email, $password, $conf_password);
     }
-
-    $identifiant = '';
-    $email = '';
-    $erreur = '';
-
-    if(!empty($_POST)) {
-        extract($_POST);
-        if(isset($_POST['inscription'])) {
-            [$erreur, $identifiant, $email] = $_INSCRIPTION->inscription_user($identifiant, $email, $password, $conf_password);
-        }
-    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -33,37 +33,32 @@
 </head>
 
 <body>
-    <div class="container">
 
-        <main>
-            <div class="content">
-                <form method="POST">
-                    <h1>S'inscrire</h1>
+    <form method="POST">
+        <h1>S'inscrire</h1>
 
-                    <?php if(isset($erreur)) { ?><p style="color: red;" class="erreur"><?= $erreur ?></p> <?php } ?>
+        <?php if (isset($erreur)) { ?><p style="color: red;" class="erreur"><?= $erreur ?></p> <?php } ?>
 
-                    <input required type="text" value="<?= $identifiant ?>" name="identifiant" placeholder="Votre identifiant">
+        <input required type="text" value="<?= $identifiant ?>" name="identifiant" placeholder="Votre identifiant">
 
-                    <input required type="email" value="<?= $email ?>" name="email" placeholder="Votre adresse-mail">
+        <input required type="email" value="<?= $email ?>" name="email" placeholder="Votre adresse-mail">
 
-                    <input required type="password" name="password" placeholder="Votre mot de passe">
-                    <input required type="password" name="conf_password" placeholder="Confirmer votre mot de passe">
+        <input required type="password" name="password" placeholder="Votre mot de passe">
+        <input required type="password" name="conf_password" placeholder="Confirmer votre mot de passe">
 
-                    <div class="info_pass">
-                        <span class="material-symbols-outlined icon">info</span>
-                        Le mot de passe doit comporter au minimum 12 caractères avec Minuscule(s), Majuscule(s), Chiffre(s), Caractère(s) spécial/spéciaux
-                    </div>
+        <div class="info_pass">
+            <span class="material-symbols-outlined icon">info</span>
+            Le mot de passe doit comporter au minimum 12 caractères avec Minuscule(s), Majuscule(s), Chiffre(s), Caractère(s) spécial/spéciaux
+        </div>
 
-                    <a href="faq">Pourquoi demandons-nous ces informations ?</a>
+        <a href="faq">Pourquoi demandons-nous ces informations ?</a>
 
-                    <input type="submit" name="inscription" value="Créer mon compte">
+        <input type="submit" name="inscription" value="Créer mon compte">
 
-                    <p>Vous avez déjà un compte ? <a href="login">Se connecter</a></p>
-                </form>
-            </div>
-        </main>
+        <p>Vous avez déjà un compte ? <a href="login">Se connecter</a></p>
+    </form>
 
-    </div>
+    <script src="<?= ROOT_PATH ?>javascript/changeTheme.js"></script>
 </body>
 
 </html>

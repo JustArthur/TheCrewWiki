@@ -1,10 +1,10 @@
 <?php
-    include_once '../../include.php';
+include_once '../../include.php';
 
-    if($_SESSION['utilisateur'][3] != 3) {
-        header('Location: ../../index');
-        exit();
-    }
+if ($_SESSION['utilisateur'][3] != 3) {
+    header('Location: ../../index');
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,11 +18,11 @@
 
     <link rel="stylesheet" href="style/panel.css">
 
-    <title>Document</title>
+    <title>TheWikiCrew | Panel Admin</title>
 </head>
 
 <body>
-    <main>
+    <div class="panel">
         <h1>The Crew 2 - Ajouter des données</h1>
         <ul class="list">
             <a href="add_brand" class="list-item box">
@@ -52,7 +52,9 @@
                 <span class="material-symbols-rounded icon">arrow_forward</span>
             </a>
         </ul>
-    </main>
+    </div>
+
+    <script src="../../javascript/changeTheme.js"></script>
 </body>
 
 </html>

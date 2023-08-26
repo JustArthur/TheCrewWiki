@@ -1,3 +1,5 @@
+@import url('defaultStyle.css');
+
 .list-card {
     display: flex;
     flex-wrap: wrap;

@@ -1,10 +1,10 @@
 <?php
 
-    include_once '../../include.php';
+include_once '../../include.php';
 
-    $resBrands = $DB->prepare('SELECT * FROM brands INNER JOIN country ON country.idCountry = brands.idCountry ORDER BY brands.nomBrand ASC');
-    $resBrands->execute();
-    $resBrands = $resBrands->fetchAll();
+$resBrands = $DB->prepare('SELECT * FROM brands INNER JOIN country ON country.idCountry = brands.idCountry ORDER BY brands.nomBrand ASC');
+$resBrands->execute();
+$resBrands = $resBrands->fetchAll();
 
 ?>
 
@@ -31,60 +31,62 @@
 </head>
 
 <body>
-    <div class="container">
-        <?php include_once '../views/sidebar.php' ?>
+    <?php include_once '../views/sidebar.php' ?>
 
-        <main>
-            <div class="content">
-                <div class="title">Liste des marques</div>
+    <main>
+        <div class="content">
+            <div class="title">Liste des marques</div>
 
-                <p class="desc big">Liste de toutes les marques présentes en jeu.</p>
+            <p class="desc big">Liste de toutes les marques présentes en jeu.</p>
 
-                <form id="formulaire" action="" class="search_form">
-                    <div class="search">
-                        <i class="uil uil-search"></i>
-                        <input spellcheck="false" type="text" placeholder="Rechercher une marque">
+            <form id="formulaire" action="" class="search_form">
+                <div class="search">
+                    <i class="uil uil-search"></i>
+                    <input spellcheck="false" type="text" placeholder="Rechercher une marque">
+                </div>
+            </form>
+
+            <form action="">
+                <div class="wrapper">
+                    <div class="select-btn">
+                        <span>Sélectionner un pays</span>
+                        <i class="uil uil-angle-down"></i>
                     </div>
-                </form>
-
-                <form action="">
-                    <div class="wrapper">
-                        <div class="select-btn">
-                            <span>Sélectionner un pays</span>
-                            <i class="uil uil-angle-down"></i>
+                    <div class="content">
+                        <div class="search">
+                            <i class="uil uil-search"></i>
+                            <input type="text" placeholder="Rechercher un pays">
                         </div>
-                        <div class="content">
-                            <div class="search">
-                                <i class="uil uil-search"></i>
-                                <input type="text" placeholder="Rechercher un pays">
-                            </div>
-                            <ul id="paysSelect" class="options"></ul>
-                        </div>
+                        <ul id="paysSelect" class="options"></ul>
                     </div>
-                </form>
+                </div>
+            </form>
 
 
-                <ul class="list-card" id="cards">
-                    <?php 
-                        //---- [ Importation des cartes ] ----//
-                        include_once '../views/card.php';
+            <ul class="list-card" id="cards">
+                <?php
+                //---- [ Importation des cartes ] ----//
+                include_once '../views/card.php';
 
-                        foreach ($resBrands as $brand) {
+                foreach ($resBrands as $brand) {
 
-                            $link = "cars?id_brand=" . $brand['idBrand'];
-                            $img = "../../img/brands/" . $brand['nomBrand'] . "/logo/" . $brand['imgBrand'];
-                            $imgFlag = "../../img/flags/" . $brand['flagCountry'];
-                            $nomBrand = $brand['nomBrand'];
-                            if ($brand['anneeBrand'] != 0) { $date = $brand['anneeBrand']; } else { $date = '?'; }
-                        
-                            brandCard($link, $img, $imgFlag, $nomBrand, $date);
-                        }
-                        
-                    ?>
-                </ul>
-            </div>
-        </main>
-    </div>
+                    $link = "cars?id_brand=" . $brand['idBrand'];
+                    $img = "../../img/brands/" . $brand['nomBrand'] . "/logo/" . $brand['imgBrand'];
+                    $imgFlag = "../../img/flags/" . $brand['flagCountry'];
+                    $nomBrand = $brand['nomBrand'];
+                    if ($brand['anneeBrand'] != 0) {
+                        $date = $brand['anneeBrand'];
+                    } else {
+                        $date = '?';
+                    }
+
+                    brandCard($link, $img, $imgFlag, $nomBrand, $date);
+                }
+
+                ?>
+            </ul>
+        </div>
+    </main>
 
     <script>
         //-- Pour la compatibilité KeyPass et éviter le enter du submit si l'utilisateur n'as pas rempli les 3 champs ----------------

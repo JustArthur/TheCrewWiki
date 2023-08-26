@@ -1,57 +1,62 @@
 <?php
-    include_once '../../include.php';
+include_once '../../include.php';
 
-    $selectCountry = $DB->prepare('SELECT * FROM country ORDER BY nameCountry ASC');
-    $selectCountry->execute();
-    $selectCountry = $selectCountry->fetchAll();
+$selectCountry = $DB->prepare('SELECT * FROM country ORDER BY nameCountry ASC');
+$selectCountry->execute();
+$selectCountry = $selectCountry->fetchAll();
 
-    $valid = true;
+$valid = true;
 
-    if (!empty($_POST)) {
-        extract($_POST);
+if (!empty($_POST)) {
+    extract($_POST);
 
-        if (isset($_POST['addBrand'])) {
+    if (isset($_POST['addBrand'])) {
 
-            if (isset($_FILES['imgBrand']) && !empty($_FILES['imgBrand'])) {
-                $extensionValides = array('jpg', 'png', 'jpeg', 'webp');
+        if (isset($_FILES['imgBrand']) && !empty($_FILES['imgBrand'])) {
+            $extensionValides = array('jpg', 'png', 'jpeg', 'webp');
 
-                $upload_Brand = strtolower(substr(strrchr($_FILES['imgBrand']['name'], '.'), 1));
+            $upload_Brand = strtolower(substr(strrchr($_FILES['imgBrand']['name'], '.'), 1));
 
-                if (in_array($upload_Brand, $extensionValides)) {
+            if (in_array($upload_Brand, $extensionValides)) {
 
-                    $dossierBrand = '../../../img/brands/' . $nomBrand;
-                    $dossierLogoBrand = $dossierBrand . '/logo';
-                    $dossierCarsBrands = $dossierBrand . '/cars';
+                $dossierBrand = '../../../img/brands/' . $nomBrand;
+                $dossierLogoBrand = $dossierBrand . '/logo';
+                $dossierCarsBrands = $dossierBrand . '/cars';
 
-                    if(!is_dir($dossierBrand)) { mkdir($dossierBrand); }
-                    if(!is_dir($dossierLogoBrand)) { mkdir($dossierLogoBrand); }
-                    if(!is_dir($dossierCarsBrands)) { mkdir($dossierCarsBrands); }
+                if (!is_dir($dossierBrand)) {
+                    mkdir($dossierBrand);
+                }
+                if (!is_dir($dossierLogoBrand)) {
+                    mkdir($dossierLogoBrand);
+                }
+                if (!is_dir($dossierCarsBrands)) {
+                    mkdir($dossierCarsBrands);
+                }
 
-                    $chemin_imgBrand = $dossierLogoBrand . '/' . $_FILES['imgBrand']['name'];
+                $chemin_imgBrand = $dossierLogoBrand . '/' . $_FILES['imgBrand']['name'];
 
-                    $res_livretFamille = move_uploaded_file($_FILES['imgBrand']['tmp_name'], $chemin_imgBrand);
+                $res_livretFamille = move_uploaded_file($_FILES['imgBrand']['tmp_name'], $chemin_imgBrand);
 
-                    if (is_readable($chemin_imgBrand)) {
-                        $valid = true;
-                    } else {
-                        $valid = false;
-                    }
-
+                if (is_readable($chemin_imgBrand)) {
+                    $valid = true;
                 } else {
                     $valid = false;
-                    echo 'Mauvais format de fichier';
                 }
             } else {
                 $valid = false;
-                echo 'Image brand pas mis';
+                echo 'Mauvais format de fichier';
             }
+        } else {
+            $valid = false;
+            echo 'Image brand pas mis';
+        }
 
-            if ($valid) {
-                $insertBDD = $DB->prepare("INSERT INTO brands (nomBrand, imgBrand, anneeBrand, idCountry) VALUES(?, ?, ?, ?)");
-                $insertBDD->execute([$nomBrand, $_FILES['imgBrand']['name'], $anneeBrand, $country]);
-            }
+        if ($valid) {
+            $insertBDD = $DB->prepare("INSERT INTO brands (nomBrand, imgBrand, anneeBrand, idCountry) VALUES(?, ?, ?, ?)");
+            $insertBDD->execute([$nomBrand, $_FILES['imgBrand']['name'], $anneeBrand, $country]);
         }
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -65,30 +70,28 @@
 
     <link rel="stylesheet" href="style/panel.css">
 
-    <title>Document</title>
+    <title>TheWikiCrew | Ajouter une marque</title>
 </head>
 
 <body>
-    <main>
-        <form method="POST" enctype="multipart/form-data">
-            <h1>Ajouter une marque</h1>
-            <input type="text" autofocus name="nomBrand" placeholder="Nom de la marque">
+    <form method="POST" enctype="multipart/form-data">
+        <h1>Ajouter une marque</h1>
+        <input type="text" autofocus name="nomBrand" placeholder="Nom de la marque">
 
-            <input type="number" name="anneeBrand" placeholder="Année de création">
+        <input type="number" name="anneeBrand" placeholder="Année de création">
 
-            <select name="country">
-                <option value="none" hidden>Choisir le pays</option>
-                <?php foreach ($selectCountry as $country) { ?>
-                    <option value="<?= $country['idCountry'] ?>"><?= $country['nameCountry'] ?></option>
-                <?php } ?>
-            </select>
+        <select name="country">
+            <option value="none" hidden>Choisir le pays</option>
+            <?php foreach ($selectCountry as $country) { ?>
+                <option value="<?= $country['idCountry'] ?>"><?= $country['nameCountry'] ?></option>
+            <?php } ?>
+        </select>
 
-            <input type="file" id="image" name="imgBrand">
-            <img id="img" src="img/no-image-selected.png" alt="No image selected" class="no_image">
+        <input type="file" id="image" name="imgBrand">
+        <img id="img" src="img/no-image-selected.png" alt="No image selected" class="no_image">
 
-            <input type="submit" class="submit_btn" name="addBrand" value="Ajouter la marque">
-        </form>
-    </main>
+        <input type="submit" class="submit_btn" name="addBrand" value="Ajouter la marque">
+    </form>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -126,6 +129,8 @@
             });
         });
     </script>
+
+    <script src="../../javascript/changeTheme.js"></script>
 </body>
 
 </html>
