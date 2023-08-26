@@ -21,7 +21,7 @@
 
     <main>
         <div class="content">
-            <div class="title">Introduction</div>
+            <h1 class="title">Introduction</h1>
 
             <p class="desc big">Plongez dans l'univers passionnant de The Crew grâce à notre wiki complet dédié à cette licence captivante.</p>
 
