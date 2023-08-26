@@ -15,9 +15,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="<?= ROOT_PATH ?>style/mainStyle.css">
-    <link rel="stylesheet" href="<?= ROOT_PATH ?>style/sidebarStyle.css">
-    <link rel="stylesheet" href="<?= ROOT_PATH ?>pages/style/personalisation.css">
+    <link rel="stylesheet" href="../../../../style/mainStyle.css">
+    <link rel="stylesheet" href="../../../../style/sidebarStyle.css">
+    <link rel="stylesheet" href="../../../../style/personalisation.css">
 
     <title>TheWikiCrew | Personnalisation du compte</title>
 </head>

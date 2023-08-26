@@ -1,5 +1,5 @@
 <?php
-    include_once '../../../include.php';
+    include_once '../../include.php';
 
     $selectCountry = $DB->prepare('SELECT * FROM country ORDER BY nameCountry ASC');
     $selectCountry->execute();
@@ -63,7 +63,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
-    <link rel="stylesheet" href="../style/panel.css">
+    <link rel="stylesheet" href="style/panel.css">
 
     <title>Document</title>
 </head>
@@ -84,7 +84,7 @@
             </select>
 
             <input type="file" id="image" name="imgBrand">
-            <img id="img" src="../img/no-image-selected.png" alt="No image selected" class="no_image">
+            <img id="img" src="img/no-image-selected.png" alt="No image selected" class="no_image">
 
             <input type="submit" class="submit_btn" name="addBrand" value="Ajouter la marque">
         </form>

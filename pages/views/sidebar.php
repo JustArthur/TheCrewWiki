@@ -20,8 +20,8 @@
 
     <?php if(empty($_SESSION['utilisateur'])) { ?>
         <div class="account">
-            <a class="input_btn register" href="<?= ROOT_PATH ?>pages/client/connexion/register">S'inscrire</a>
-            <a class="input_btn login" href="<?= ROOT_PATH ?>pages/client/connexion/login">Se connecter</a>
+            <a class="input_btn register" href="<?= ROOT_PATH ?>pages/client/user/register">S'inscrire</a>
+            <a class="input_btn login" href="<?= ROOT_PATH ?>pages/client/user/login">Se connecter</a>
         </div>
     <?php } else {?>
         <div class="account">

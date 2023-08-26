@@ -33,7 +33,7 @@
 
     <link rel="stylesheet" href="../../style/sidebarStyle.css">
 
-    <title>Document</title>
+    <title>TheWikiCrew | <?= $resBrands['nomBrand'] ?></title>
 </head>
 
 <body>
@@ -44,7 +44,7 @@
             <div class="content">
                 <div class="title">Liste des véhicules de la marque <?= $resBrands['nomBrand'] ?></div>
 
-                <p class="desc big">Liste de tout les véhicules.</p>
+                <p class="desc big">Liste de tous les véhicules.</p>
 
                 <form id="formulaire" action="" class="search_form">
                     <div class="search">
@@ -77,7 +77,7 @@
                                 $text_price = "<h4 style='display: none'></h4>";
                             }
 
-                            $link = "pages/car_info?id_car=" . $car['idCar'];
+                            $link = "car_info?id_car=" . $car['idCar'];
                             $img = "../../img/brands/" . $car['nomBrand'] . "/cars/" . $car['imgCar'];
                             $imgFlag = "../../img/flags/" . $resBrands['flagCountry'];
                             $title = $car['nomCar'];

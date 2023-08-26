@@ -1,5 +1,5 @@
 <?php
-    include_once '../../../include.php';
+    include_once '../../include.php';
 
     $selecCategories = $DB->prepare('SELECT * FROM categories ORDER BY nameCategory ASC');
     $selecCategories->execute();
@@ -63,7 +63,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
-    <link rel="stylesheet" href="../style/panel.css">
+    <link rel="stylesheet" href="style/panel.css">
 
     <title>Admin | Activités</title>
 </head>
@@ -82,7 +82,7 @@
             </select>
 
             <input type="file" id="image" name="imgActivity">
-            <img id="img" src="../img/no-image-selected.png" alt="No image selected" class="no_image">
+            <img id="img" src="img/no-image-selected.png" alt="No image selected" class="no_image">
 
             <input type="submit" class="submit_btn" name="addActivity" value="Ajouter la voiture">
         </form>

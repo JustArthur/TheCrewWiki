@@ -1,5 +1,5 @@
 <?php
-    include_once '../../../include.php';
+    include_once '../../include.php';
 
     $infoCar = $DB->prepare(
         "SELECT * FROM cars
@@ -28,26 +28,26 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="../../../style/mainStyle.css">
+    <link rel="stylesheet" href="../../style/mainStyle.css">
 
     <link rel="stylesheet" href="../../style/car_info.css">
 
-    <link rel="stylesheet" href="../../../style/searchInput.css">
-    <link rel="stylesheet" href="../../../style/cardStyle.css">
+    <link rel="stylesheet" href="../../style/searchInput.css">
+    <link rel="stylesheet" href="../../style/cardStyle.css">
 
-    <link rel="stylesheet" href="../../../style/sidebarStyle.css">
+    <link rel="stylesheet" href="../../style/sidebarStyle.css">
 
-    <title>Document</title>
+    <title>TheWikiCrew | <?= $infoCar['nomCar'] ?></title>
 </head>
 <body>
     <div class="container">
-        <?php include_once '../../views/sidebar.php' ?>
+        <?php include_once '../views/sidebar.php' ?>
 
         <main>
             <div class="content">
                 <div class="title"><?= $infoCar['nomCar'] ?></div>
 
-                <img class="carImg" src="../../../img/brands/<?= $infoCar['nomBrand'] ?>/cars/<?= $infoCar['imgCar'] ?>" alt="">
+                <img class="carImg" src="../../img/brands/<?= $infoCar['nomBrand'] ?>/cars/<?= $infoCar['imgCar'] ?>" alt="">
             </div>
         </main>
 
