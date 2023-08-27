@@ -30,14 +30,20 @@ if (empty($_SESSION['utilisateur'])) {
         <div class="content">
             <h1>Personnalisation de votre compte</h1>
 
-            <div class="grid_custom_account">
-
+            <div class="custom_avatar">
+                <h2>Personnalisez votre avatar</h2>
                 <div class="avatar-selector">
-                    <div class="avatar-option"></div>
-                    <div class="avatar-option"></div>
-                    <div class="avatar-option"></div>
+                    <img src="" alt="" class="avatar-option">
+                    <img src="" alt="" class="avatar-option">
+                    <img src="" alt="" class="avatar-option">
+                    <img src="" alt="" class="avatar-option">
+                    <img src="" alt="" class="avatar-option">
+                    <img src="" alt="" class="avatar-option">
                 </div>
+            </div>
 
+            <div class="custom_theme">
+                <h2>Personnalisez votre thème</h2>
                 <div class="theme-selector">
                     <div class="theme-option" id="theme-light-yellow" onclick="changeTheme('light-yellow')">
                         <div class="left_circle"></div>
@@ -72,8 +78,8 @@ if (empty($_SESSION['utilisateur'])) {
                         <div class="right_circle"></div>
                     </div>
                 </div>
-
             </div>
+
         </div>
     </main>
 </body>
