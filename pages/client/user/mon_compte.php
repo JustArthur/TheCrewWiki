@@ -46,7 +46,7 @@ if (empty($_SESSION['utilisateur'])) {
                 userCard('settings/friends', 'person_add', 'Amis', 'Ajoute des amis, vois leurs avancements dans le jeu');
                 userCard('settings/security', 'security', 'Sécurité', 'Sécurise ton compte pour combattre les méchants');
                 userCard('settings/confidentiality', 'lock', 'Confidentialité', 'Gére la confidentialité de ton compte');
-                userCard('settings/send_data', 'database', 'Données personnelle', 'Fait une demande de récupération de tes données, conforme au RGPD');
+                userCard('settings/donnees', 'database', 'Données personnelles', 'Fais une demande de récupération de tes données, conforme au RGPD');
 
                 if ($_SESSION['utilisateur'][3] == 3) {
                     userCard('../../admin/panel', 'admin_panel_settings', 'Administrateur', 'Accède au panel administrateur');

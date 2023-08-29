@@ -29,6 +29,18 @@ main .content .desc {
     line-height: normal;
 }
 
+main .content a.data {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 6px;
+    background: var(--primary-color);
+    color: var(--text-color-login);
+}
+
 main .content .desc.big {
     color: var(--text-color-gray);
 
