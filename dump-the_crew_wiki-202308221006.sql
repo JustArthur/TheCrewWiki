@@ -24,13 +24,13 @@ DROP TABLE IF EXISTS `activities`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `activities` (
   `idActivity` bigint NOT NULL AUTO_INCREMENT,
-  `nomActivity` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `nomActivity` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `catActivity` bigint DEFAULT NULL,
   `imgActivity` text,
   PRIMARY KEY (`idActivity`),
   KEY `activities_FK` (`catActivity`),
   CONSTRAINT `activities_FK` FOREIGN KEY (`catActivity`) REFERENCES `categories` (`idCategory`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,9 +116,9 @@ DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `idCategory` bigint NOT NULL AUTO_INCREMENT,
   `nameCategory` varchar(100) DEFAULT NULL,
-  `flagCategory` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `flagCategory` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   PRIMARY KEY (`idCategory`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
